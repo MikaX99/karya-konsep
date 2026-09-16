@@ -56,99 +56,116 @@ document.addEventListener('DOMContentLoaded', () => {
   // --------------------------------------------------------------------------
   const fixedStage = document.querySelector('.fixed-cinematic-stage');
   const windCanvas = document.getElementById('windCanvas');
+  const hasFinePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
 
-  // Mouse Parallax on Background Stage
-  let targetX = 0, targetY = 0;
-  let currentX = 0, currentY = 0;
+  // Mouse Parallax on Background Stage (Hanya di desktop dengan mouse, hemat baterai & GPU)
+  if (fixedStage && hasFinePointer) {
+    let targetX = 0, targetY = 0;
+    let currentX = 0, currentY = 0;
+    let isMoving = false;
+    let rafId = null;
 
-  window.addEventListener('mousemove', (e) => {
-    const normX = (e.clientX / window.innerWidth - 0.5) * 2;
-    const normY = (e.clientY / window.innerHeight - 0.5) * 2;
-    targetX = normX * -18;
-    targetY = normY * -14;
-  }, { passive: true });
+    function renderParallax() {
+      const dx = targetX - currentX;
+      const dy = targetY - currentY;
+      currentX += dx * 0.08;
+      currentY += dy * 0.08;
 
-  function renderParallax() {
-    currentX += (targetX - currentX) * 0.06;
-    currentY += (targetY - currentY) * 0.06;
-
-    if (fixedStage) {
       fixedStage.style.transform = `translate3d(${currentX.toFixed(2)}px, ${currentY.toFixed(2)}px, 0) scale(1.05)`;
+
+      if (Math.abs(dx) > 0.04 || Math.abs(dy) > 0.04) {
+        rafId = requestAnimationFrame(renderParallax);
+      } else {
+        isMoving = false;
+        rafId = null;
+      }
     }
-    requestAnimationFrame(renderParallax);
-  }
-  renderParallax();
 
-  // Wind Spores / Organic Breeze Simulation
-  if (windCanvas) {
-    const ctx = windCanvas.getContext('2d', { alpha: true });
-    let width = windCanvas.width = window.innerWidth;
-    let height = windCanvas.height = window.innerHeight;
-
-    window.addEventListener('resize', () => {
-      width = windCanvas.width = window.innerWidth;
-      height = windCanvas.height = window.innerHeight;
+    window.addEventListener('mousemove', (e) => {
+      const normX = (e.clientX / window.innerWidth - 0.5) * 2;
+      const normY = (e.clientY / window.innerHeight - 0.5) * 2;
+      targetX = normX * -18;
+      targetY = normY * -14;
+      if (!isMoving) {
+        isMoving = true;
+        if (!rafId) rafId = requestAnimationFrame(renderParallax);
+      }
     }, { passive: true });
+  }
 
-    const spores = [];
-    const sporeCount = 35;
+  // Wind Spores / Organic Breeze Simulation (Desktop only, tanpa shadowBlur yang boros GPU)
+  if (windCanvas) {
+    if (!hasFinePointer || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      windCanvas.style.display = 'none';
+    } else {
+      const ctx = windCanvas.getContext('2d', { alpha: true });
+      let width = windCanvas.width = window.innerWidth;
+      let height = windCanvas.height = window.innerHeight;
 
-    for (let i = 0; i < sporeCount; i++) {
-      spores.push({
-        x: Math.random() * width,
-        y: Math.random() * height,
-        vx: Math.random() * 0.8 + 0.3,
-        vy: Math.random() * 0.4 - 0.2,
-        size: Math.random() * 2.2 + 0.8,
-        alpha: Math.random() * 0.45 + 0.15,
-        oscillationSpeed: Math.random() * 0.02 + 0.01,
-        angle: Math.random() * Math.PI * 2
-      });
-    }
+      window.addEventListener('resize', () => {
+        width = windCanvas.width = window.innerWidth;
+        height = windCanvas.height = window.innerHeight;
+      }, { passive: true });
 
-    function animateWindSpores() {
-      ctx.clearRect(0, 0, width, height);
+      const spores = [];
+      const sporeCount = 18; // optimal & ringan
 
       for (let i = 0; i < sporeCount; i++) {
-        const s = spores[i];
-        s.angle += s.oscillationSpeed;
-        s.x += s.vx + Math.sin(s.angle) * 0.4;
-        s.y += s.vy + Math.cos(s.angle) * 0.3;
-
-        if (s.x > width + 20) s.x = -20;
-        if (s.y > height + 20) s.y = -20;
-        if (s.y < -20) s.y = height + 20;
-
-        ctx.beginPath();
-        ctx.arc(s.x, s.y, s.size, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(196, 242, 138, ${s.alpha})`;
-        ctx.shadowColor = 'rgba(196, 242, 138, 0.6)';
-        ctx.shadowBlur = 8;
-        ctx.fill();
-        ctx.shadowBlur = 0;
+        spores.push({
+          x: Math.random() * width,
+          y: Math.random() * height,
+          vx: Math.random() * 0.6 + 0.25,
+          vy: Math.random() * 0.3 - 0.15,
+          size: Math.random() * 2 + 0.8,
+          alpha: Math.random() * 0.35 + 0.15,
+          oscillationSpeed: Math.random() * 0.02 + 0.01,
+          angle: Math.random() * Math.PI * 2
+        });
       }
 
-      requestAnimationFrame(animateWindSpores);
+      function animateWindSpores() {
+        ctx.clearRect(0, 0, width, height);
+
+        for (let i = 0; i < sporeCount; i++) {
+          const s = spores[i];
+          s.angle += s.oscillationSpeed;
+          s.x += s.vx + Math.sin(s.angle) * 0.35;
+          s.y += s.vy + Math.cos(s.angle) * 0.25;
+
+          if (s.x > width + 20) s.x = -20;
+          if (s.y > height + 20) s.y = -20;
+          if (s.y < -20) s.y = height + 20;
+
+          ctx.beginPath();
+          ctx.arc(s.x, s.y, s.size, 0, Math.PI * 2);
+          ctx.fillStyle = `rgba(196, 242, 138, ${s.alpha})`;
+          ctx.fill();
+        }
+
+        requestAnimationFrame(animateWindSpores);
+      }
+      animateWindSpores();
     }
-    animateWindSpores();
   }
 
   // --------------------------------------------------------------------------
   // 3. 3D INTERACTIVE TILT ON CLIENT LOGO CARDS
   // --------------------------------------------------------------------------
-  const clientCards = document.querySelectorAll('.client-logo-card');
-  clientCards.forEach(card => {
-    card.addEventListener('mousemove', (e) => {
-      const rect = card.getBoundingClientRect();
-      const x = e.clientX - rect.left - rect.width / 2;
-      const y = e.clientY - rect.top - rect.height / 2;
-      card.style.transform = `perspective(600px) rotateX(${(-y * 0.08).toFixed(2)}deg) rotateY(${(x * 0.08).toFixed(2)}deg) translateY(-4px)`;
-    });
+  if (hasFinePointer) {
+    const clientCards = document.querySelectorAll('.architectural-client-cell');
+    clientCards.forEach(card => {
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left - rect.width / 2;
+        const y = e.clientY - rect.top - rect.height / 2;
+        card.style.transform = `perspective(600px) rotateX(${(-y * 0.08).toFixed(2)}deg) rotateY(${(x * 0.08).toFixed(2)}deg) translateY(-4px)`;
+      });
 
-    card.addEventListener('mouseleave', () => {
-      card.style.transform = '';
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = '';
+      });
     });
-  });
+  }
 
   // --------------------------------------------------------------------------
   // 4. ALETHIA FROSTED GLASS ACCORDION
@@ -249,28 +266,38 @@ document.addEventListener('DOMContentLoaded', () => {
   const nav = document.querySelector('.clean-editorial-nav');
   const lightSections = document.querySelectorAll('.alethia-solutions-section');
 
+  let navTicking = false;
   function updateNavContrast() {
     if (!nav || !lightSections.length) return;
     const navRect = nav.getBoundingClientRect();
     const navMidY = navRect.top + navRect.height / 2;
     let isOverLight = false;
 
-    lightSections.forEach(section => {
-      const secRect = section.getBoundingClientRect();
+    for (let i = 0; i < lightSections.length; i++) {
+      const secRect = lightSections[i].getBoundingClientRect();
       if (navMidY >= secRect.top && navMidY <= secRect.bottom) {
         isOverLight = true;
+        break;
       }
-    });
+    }
 
     if (isOverLight) {
       nav.classList.add('theme-light-mode');
     } else {
       nav.classList.remove('theme-light-mode');
     }
+    navTicking = false;
   }
 
-  window.addEventListener('scroll', updateNavContrast, { passive: true });
-  window.addEventListener('resize', updateNavContrast);
+  function requestNavUpdate() {
+    if (!navTicking) {
+      navTicking = true;
+      requestAnimationFrame(updateNavContrast);
+    }
+  }
+
+  window.addEventListener('scroll', requestNavUpdate, { passive: true });
+  window.addEventListener('resize', requestNavUpdate, { passive: true });
   updateNavContrast();
 
   // --------------------------------------------------------------------------

@@ -11,8 +11,6 @@
    - Horizontal Full-Bleed "karya sistem" Giant Footer
    ========================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700;800;900&display=swap');
-
 :root {
   --color-deep-forest: #07180C;
   --color-dark-moss: #0D1E10;
@@ -103,7 +101,6 @@ ul { list-style: none; }
   pointer-events: none;
   z-index: 0;
   transform: translate3d(0, 0, 0);
-  transition: transform 0.15s ease-out;
   will-change: transform;
 }
 
@@ -1667,7 +1664,17 @@ ul { list-style: none; }
 }
 .modal-direct-row a { color: var(--accent-lime); text-decoration: none; display: inline-flex; align-items: center; gap: 0.45rem; }
 
-@media (max-width: 768px) {
+@media (hover: none), (max-width: 768px) {
+  :root {
+    --glass-blur: blur(6px);
+  }
+  .fixed-cinematic-stage {
+    transform: none !important;
+    will-change: auto;
+  }
+  .wind-spores-canvas {
+    display: none !important;
+  }
   .hero-secondary-cta { margin-left: 0; display: inline-flex; margin-top: 1rem; }
   .fact-grid { grid-template-columns: 1fr; }
 }
