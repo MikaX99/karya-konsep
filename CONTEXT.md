@@ -14,6 +14,7 @@
   3. Konten "Mengapa Memilih" & angka klaim (dari penilaian v1 6,5/10) — masih memakai 3 pilar v1 tanpa angka.
 - **Pending (urut prioritas):** lihat fokus aktif. Setelah pemenang dipilih Mika: EN + porting ke proyek produksi.
 - **Riwayat singkat:**
+  - 2026-09-17 [SELESAI] Optimasi perf Konsep B Forest (`e5e73df`): matikan canvas & parallax di touch/mobile, hapus shadowBlur boros GPU, throttle scroll navbar, hapus @import font CSS.
   - 2026-09-17 [SELESAI] GitHub Pages LIVE di `https://mikax99.github.io/karya-konsep/` via GitHub Actions (`73555de`).
   - 2026-09-17 [SELESAI] Push repo ke GitHub `MikaX99/karya-konsep` (branch `main`).
   - 2026-09-17 [SELESAI] `2368bbf` hub + B + C: content.json (4 layanan, 17 produk, 14 klien, 53 brand), build.py, reveal.js, hub, workflow. Perbaikan: reveal.js cek ulang viewport (hero mobile tersembunyi), hero Haven mobile kata ditumpuk atas/bawah kartu. Foto dikompres 5,6 MB → 1,1 MB. Preview: `launch.json` "karya-konsep" (port 3941).
