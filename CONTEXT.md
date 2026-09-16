@@ -13,8 +13,9 @@
   2. Konten "Mengapa Memilih" & angka klaim (dari penilaian v1 6,5/10) — masih memakai 3 pilar v1 tanpa angka.
 - **Pending (urut prioritas):** lihat fokus aktif. Setelah pemenang dipilih Mika: EN + porting ke proyek produksi.
 - **Riwayat singkat:**
-  - 2026-09-17 [SELESAI] Update visual Haven (`59117c5`): Hero diganti ke Network Operations Center (NOC) Jakarta Indonesia dengan layar peta topologi Indonesia, logo resmi Karya Sistem dirapikan presisi HANYA di dada kiri seragam kerja.
-  - 2026-09-17 [SELESAI] Ganti 5 foto placeholder Haven Concept C dengan kurasi foto enterprise HD (Arsitektur Swiss, Tim IT Indonesia, Data Center Tier-3, Switch Optical, Network Engineer).
+  - 2026-09-17 [SELESAI] Hero Konsep C Haven diganti ke graf 3D interaktif Obsidian-style neural network (gerak tumbuh/sprouting spring, pulsa data sinapsis, 3D orbit mouse/touch, telemetry badge, dan auto-pause via IntersectionObserver).
+  - 2026-09-17 [SELESAI] Update visual Haven (`59117c5`): Tim IT & Engineer dengan logo resmi Karya Sistem presisi HANYA di dada kiri seragam kerja.
+  - 2026-09-17 [SELESAI] Ganti foto placeholder Haven Concept C dengan kurasi enterprise HD (Data Center Tier-3, Switch Optical, Network Engineer, Tim IT).
   - 2026-09-17 [SELESAI] Optimasi perf Konsep B Forest (`e5e73df`): matikan canvas & parallax di touch/mobile, hapus shadowBlur boros GPU, throttle scroll navbar, hapus @import font CSS.
   - 2026-09-17 [SELESAI] GitHub Pages LIVE di `https://mikax99.github.io/karya-konsep/` via GitHub Actions (`73555de`).
   - 2026-09-17 [SELESAI] Push repo ke GitHub `MikaX99/karya-konsep` (branch `main`).
