@@ -13,7 +13,7 @@
   2. Konten "Mengapa Memilih" & angka klaim (dari penilaian v1 6,5/10) — masih memakai 3 pilar v1 tanpa angka.
 - **Pending (urut prioritas):** lihat fokus aktif. Setelah pemenang dipilih Mika: EN + porting ke proyek produksi.
 - **Riwayat singkat:**
-  - 2026-09-17 [SELESAI] Rapikan logo Forest & Haven: hapus duplikasi tag img di HTML, gunakan single img dengan dynamic src contrast switcher, kecilkan ukuran logo ke 26px/28px (desktop) & 22px/24px (mobile) agar proporsional dan tidak bulky.
+  - 2026-09-17 [SELESAI] Rapikan logo Forest & Haven: hapus duplikasi tag img di HTML, gunakan single img dengan dynamic src contrast switcher, setel ukuran proporsional ideal 34px (desktop) & 28px (mobile) agar terbaca jelas namun tidak bulky.
   - 2026-09-17 [SELESAI] Fix hero Haven (`9acc9a1`): hilangkan blocker IntersectionObserver & delay birth kelamaan yang bikin canvas sempat kosong hitam; graf saraf 3D Obsidian langsung tampil mekar (spring bloom) 110 nodes + debu bintang + pulsa sinapsis aktif sejak frame 0.
   - 2026-09-17 [SELESAI] Update visual Haven (`59117c5`): Tim IT & Engineer dengan logo resmi Karya Sistem presisi HANYA di dada kiri seragam kerja.
   - 2026-09-17 [SELESAI] Ganti foto placeholder Haven Concept C dengan kurasi enterprise HD (Data Center Tier-3, Switch Optical, Network Engineer, Tim IT).

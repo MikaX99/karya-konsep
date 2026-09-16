@@ -250,7 +250,7 @@ ul { list-style: none; }
 
 .nav-brand-logo,
 .drawer-brand-logo {
-  height: 26px;
+  height: 34px;
   width: auto;
   display: block;
   object-fit: contain;
@@ -260,7 +260,7 @@ ul { list-style: none; }
 @media (max-width: 768px) {
   .nav-brand-logo,
   .drawer-brand-logo {
-    height: 22px;
+    height: 28px;
   }
 }
 

@@ -1564,6 +1564,6 @@ a.ks-product-card:hover { transform: translateY(-3px); border-color: var(--ks-bl
 }
 
 /* Logo asli Karya Sistem (dari v1) menggantikan lambang geometris template */
-.ks-logo-img { height: 28px; width: auto; display: block; }
-.ks-logo-img-dark { height: 28px; }
-@media (max-width: 768px) { .ks-logo-img, .ks-logo-img-dark { height: 24px; } }
+.ks-logo-img { height: 34px; width: auto; display: block; }
+.ks-logo-img-dark { height: 34px; }
+@media (max-width: 768px) { .ks-logo-img, .ks-logo-img-dark { height: 28px; } }
