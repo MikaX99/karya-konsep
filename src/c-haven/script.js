@@ -311,42 +311,44 @@ document.addEventListener('DOMContentLoaded', () => {
   // --------------------------------------------------------------------------
   // 9. LIVING OBSIDIAN NEURAL BRAIN GRAPH ENGINE (HERO EXPANDING CARD)
   // --------------------------------------------------------------------------
+  // --------------------------------------------------------------------------
+  // 9. LIVING OBSIDIAN NEURAL BRAIN GRAPH ENGINE (HERO EXPANDING CARD)
+  // --------------------------------------------------------------------------
   function initHeroBrain() {
     const canvas = document.getElementById('heroBrainCanvas');
     const container = document.getElementById('heroExpandingCard');
-    const heroTrack = document.querySelector('.ks-hero-expand-track');
     if (!canvas || !container) return;
 
     const ctx = canvas.getContext('2d');
     let width = 0, height = 0;
     let dpr = Math.min(window.devicePixelRatio || 1, 2);
-    let isVisible = true;
     let animFrame = null;
 
     const nodes = [];
     const edges = [];
     const pulses = [];
+    const stars = [];
 
     // Domain Hub IT Karya Sistem
     const CORE_HUBS = [
-      { name: "CORE INFRA", color: "#38BDF8", size: 5.5, hemi: -1 },
-      { name: "SECURITY MESH", color: "#60A5FA", size: 5.0, hemi: 1 },
-      { name: "DATA CENTER", color: "#2563EB", size: 5.2, hemi: -1 },
-      { name: "CLOUD GATEWAY", color: "#38BDF8", size: 5.0, hemi: 1 },
-      { name: "ENTERPRISE NET", color: "#60A5FA", size: 4.8, hemi: -1 },
-      { name: "STORAGE MESH", color: "#93C5FD", size: 4.6, hemi: 1 },
+      { name: "CORE INFRA", color: "#38BDF8", size: 6.5, hemi: -1 },
+      { name: "CYBER DEFENSE", color: "#60A5FA", size: 6.0, hemi: 1 },
+      { name: "DATA CENTER", color: "#3B82F6", size: 6.0, hemi: -1 },
+      { name: "CLOUD HYBRID", color: "#38BDF8", size: 5.5, hemi: 1 },
+      { name: "OPTICAL NET", color: "#60A5FA", size: 5.5, hemi: -1 },
+      { name: "AI INTEGRATION", color: "#93C5FD", size: 5.5, hemi: 1 },
     ];
 
     function updateSize() {
       const rect = container.getBoundingClientRect();
-      const newW = Math.round(rect.width);
-      const newH = Math.round(rect.height);
+      const newW = Math.round(rect.width) || container.clientWidth || 420;
+      const newH = Math.round(rect.height) || container.clientHeight || 420;
       if (newW !== width || newH !== height) {
         width = newW;
         height = newH;
         dpr = Math.min(window.devicePixelRatio || 1, 2);
-        canvas.width = width * dpr;
-        canvas.height = height * dpr;
+        canvas.width = Math.round(width * dpr);
+        canvas.height = Math.round(height * dpr);
         ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
       }
     }
@@ -356,27 +358,38 @@ document.addEventListener('DOMContentLoaded', () => {
       nodes.length = 0;
       edges.length = 0;
       pulses.length = 0;
+      stars.length = 0;
 
-      // 1. Hub Utama
+      // 0. Ambient background star dust
+      for (let s = 0; s < 40; s++) {
+        stars.push({
+          x: (Math.random() - 0.5) * 600,
+          y: (Math.random() - 0.5) * 500,
+          z: (Math.random() - 0.5) * 400,
+          size: Math.random() * 1.5 + 0.5,
+          twinkleSpeed: 0.002 + Math.random() * 0.004,
+          twinkleOffset: Math.random() * Math.PI * 2
+        });
+      }
+
+      // 1. Hub Utama IT
       CORE_HUBS.forEach((hub, i) => {
         const side = hub.hemi;
         const angle = (i / CORE_HUBS.length) * Math.PI * 2;
         nodes.push({
-          x: side * (34 + Math.cos(angle) * 28),
-          y: Math.sin(angle) * 34 - 4,
-          z: Math.sin(angle * 2) * 22,
+          x: side * (36 + Math.cos(angle) * 26),
+          y: Math.sin(angle) * 32 - 2,
+          z: Math.sin(angle * 2) * 20,
           baseSize: hub.size,
           color: hub.color,
           name: hub.name,
           isHub: true,
-          birthDelay: i * 220, // Tumbuh berurutan
-          grown: 0,
           pulseTimer: Math.random() * 100
         });
       });
 
-      // 2. Lobus Kiri & Kanan (Bentuk Otak Organik)
-      const TOTAL_NODES = 80;
+      // 2. Lobus Kiri & Kanan (Bentuk Otak Organik 110 Nodes)
+      const TOTAL_NODES = 110;
       for (let i = nodes.length; i < TOTAL_NODES; i++) {
         const side = i % 2 === 0 ? 1 : -1;
         const u = Math.random();
@@ -386,28 +399,26 @@ document.addEventListener('DOMContentLoaded', () => {
         const r = Math.cbrt(Math.random()) * 0.95 + 0.05;
 
         // Radius elipsoid menyerupai dua belahan otak
-        const radX = 38 * r;
-        const radY = 48 * r;
-        const radZ = 34 * r;
+        const radX = 42 * r;
+        const radY = 50 * r;
+        const radZ = 36 * r;
 
-        const nx = side * 24 + radX * Math.sin(phi) * Math.cos(theta);
+        const nx = side * 22 + radX * Math.sin(phi) * Math.cos(theta);
         const ny = radY * Math.sin(phi) * Math.sin(theta) - 2;
         const nz = radZ * Math.cos(phi);
 
-        const isLeaf = Math.random() > 0.6;
-        const baseSize = isLeaf ? (1.5 + Math.random() * 1.2) : (2.4 + Math.random() * 1.5);
-        const birthDelay = 450 + Math.random() * 2400; // Tumbuh mencabang alami
+        const isLeaf = Math.random() > 0.5;
+        const baseSize = isLeaf ? (1.8 + Math.random() * 1.4) : (2.8 + Math.random() * 1.6);
+        const color = Math.random() > 0.35 ? "#38BDF8" : (Math.random() > 0.5 ? "#60A5FA" : "#BAE6FD");
 
         nodes.push({
           x: nx,
           y: ny,
           z: nz,
           baseSize: baseSize,
-          color: Math.random() > 0.35 ? "#38BDF8" : (Math.random() > 0.5 ? "#60A5FA" : "#BAE6FD"),
+          color: color,
           name: null,
           isHub: false,
-          birthDelay: birthDelay,
-          grown: 0,
           pulseTimer: Math.random() * 200
         });
       }
@@ -425,48 +436,49 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         connections.sort((p1, p2) => p1.dist - p2.dist);
-        const maxConn = a.isHub ? 6 : (Math.random() > 0.5 ? 3 : 2);
+        const maxConn = a.isHub ? 5 : (Math.random() > 0.4 ? 3 : 2);
         for (let k = 0; k < maxConn; k++) {
           const neighbor = connections[k];
-          if (neighbor && neighbor.dist < 38) {
+          if (neighbor && neighbor.dist < 44) {
             const exists = edges.some(e => 
               (e.from === i && e.to === neighbor.index) || 
               (e.from === neighbor.index && e.to === i)
             );
             if (!exists) {
-              edges.push({
-                from: i,
-                to: neighbor.index,
-                growth: 0,
-                birthDelay: Math.max(a.birthDelay, nodes[neighbor.index].birthDelay) + 120
-              });
+              edges.push({ from: i, to: neighbor.index });
             }
           }
         }
+      }
+
+      // 4. Inisialisasi pulsa sinapsis awal (20 pulsa aktif langsung)
+      for (let p = 0; p < 20; p++) {
+        spawnPulse(Math.random());
       }
     }
 
     // Interaktivitas Rotasi 3D
     let rotX = 0.12;
-    let rotY = 0;
+    let rotY = 0.25;
     let targetRotX = 0.12;
-    let targetRotY = 0;
+    let targetRotY = 0.25;
     let isDragging = false;
     let lastMouseX = 0, lastMouseY = 0;
     const startTime = performance.now();
 
     window.addEventListener('mousemove', (e) => {
+      if (isDragging) return;
       const rect = container.getBoundingClientRect();
       if (e.clientX >= rect.left && e.clientX <= rect.right &&
           e.clientY >= rect.top && e.clientY <= rect.bottom) {
         const normX = ((e.clientX - rect.left) / rect.width - 0.5) * 2;
         const normY = ((e.clientY - rect.top) / rect.height - 0.5) * 2;
-        targetRotY = normX * 0.85;
-        targetRotX = -normY * 0.55 + 0.12;
+        targetRotY += normX * 0.015;
+        targetRotX = -normY * 0.35 + 0.12;
       }
     }, { passive: true });
 
-    canvas.addEventListener('mousedown', (e) => {
+    container.addEventListener('mousedown', (e) => {
       isDragging = true;
       lastMouseX = e.clientX;
       lastMouseY = e.clientY;
@@ -477,71 +489,98 @@ document.addEventListener('DOMContentLoaded', () => {
       if (isDragging) {
         const dx = e.clientX - lastMouseX;
         const dy = e.clientY - lastMouseY;
-        targetRotY += dx * 0.008;
-        targetRotX += dy * 0.008;
+        targetRotY += dx * 0.007;
+        targetRotX += dy * 0.007;
         lastMouseX = e.clientX;
         lastMouseY = e.clientY;
       }
     });
 
-    canvas.addEventListener('touchmove', (e) => {
+    container.addEventListener('touchstart', (e) => {
       if (e.touches.length === 1) {
-        const touch = e.touches[0];
-        const rect = container.getBoundingClientRect();
-        const normX = ((touch.clientX - rect.left) / rect.width - 0.5) * 2;
-        targetRotY = normX * 0.75;
+        isDragging = true;
+        lastMouseX = e.touches[0].clientX;
+        lastMouseY = e.touches[0].clientY;
       }
     }, { passive: true });
 
-    function spawnPulse() {
+    window.addEventListener('touchend', () => { isDragging = false; });
+    container.addEventListener('touchmove', (e) => {
+      if (isDragging && e.touches.length === 1) {
+        const dx = e.touches[0].clientX - lastMouseX;
+        const dy = e.touches[0].clientY - lastMouseY;
+        targetRotY += dx * 0.008;
+        targetRotX += dy * 0.008;
+        lastMouseX = e.touches[0].clientX;
+        lastMouseY = e.touches[0].clientY;
+      }
+    }, { passive: true });
+
+    function spawnPulse(initialProgress = 0) {
       if (!edges.length) return;
       const edge = edges[Math.floor(Math.random() * edges.length)];
-      if (edge.growth > 0.8) {
-        pulses.push({
-          edge: edge,
-          progress: 0,
-          speed: 0.018 + Math.random() * 0.022,
-          color: Math.random() > 0.4 ? "#38BDF8" : "#FFFFFF"
-        });
-      }
+      pulses.push({
+        edge: edge,
+        progress: initialProgress,
+        speed: 0.012 + Math.random() * 0.018,
+        color: Math.random() > 0.35 ? "#FFFFFF" : "#38BDF8"
+      });
     }
 
     // Render loop 60fps
     function render(now) {
-      if (!isVisible) {
-        animFrame = null;
-        return;
-      }
+      animFrame = requestAnimationFrame(render);
+      if (window.scrollY > window.innerHeight * 2.2) return;
 
       updateSize();
-      const elapsed = now - startTime;
+      const elapsed = Math.max(0, now - startTime);
+
+      // Mekar Organik Pegas (Spring Sprouting): dari 38% mekar ke 100% dalam 1.2s
+      const tNorm = Math.min(1, elapsed / 1200);
+      const bloomScale = 0.38 + 0.62 * (1 - Math.exp(-3.5 * tNorm) * Math.cos(4.5 * tNorm));
 
       // Rotasi kontinu halus
-      targetRotY += 0.0032;
-      rotX += (targetRotX - rotX) * 0.06;
-      rotY += (targetRotY - rotY) * 0.06;
+      if (!isDragging) {
+        targetRotY += 0.0035;
+      }
+      rotX += (targetRotX - rotX) * 0.07;
+      rotY += (targetRotY - rotY) * 0.07;
 
       ctx.clearRect(0, 0, width, height);
 
       const centerX = width / 2;
       const centerY = height / 2;
-      const brainScale = Math.min(width, height) * 0.0036;
-      const fov = 380;
+      const brainScale = Math.min(width, height) * 0.0055 * bloomScale;
+      const fov = 400;
 
       const cosY = Math.cos(rotY), sinY = Math.sin(rotY);
       const cosX = Math.cos(rotX), sinX = Math.sin(rotX);
+
+      // Gambar debu bintang latar belakang (Constellation Dust)
+      for (let s = 0; s < stars.length; s++) {
+        const star = stars[s];
+        const sx1 = star.x * cosY + star.z * sinY;
+        const sz1 = -star.x * sinY + star.z * cosY;
+        const sy1 = star.y * cosX - sz1 * sinX;
+        const sz2 = star.y * sinX + sz1 * cosX;
+
+        const spersp = fov / (fov + sz2 + 250);
+        const starSX = centerX + sx1 * spersp;
+        const starSY = centerY + sy1 * spersp;
+
+        if (starSX > 0 && starSX < width && starSY > 0 && starSY < height) {
+          const twinkle = 0.35 + 0.35 * Math.sin(elapsed * star.twinkleSpeed + star.twinkleOffset);
+          ctx.beginPath();
+          ctx.arc(starSX, starSY, star.size * spersp, 0, Math.PI * 2);
+          ctx.fillStyle = `rgba(186, 230, 253, ${twinkle.toFixed(2)})`;
+          ctx.fill();
+        }
+      }
 
       // Proyeksi 3D simpul ke layar
       const projectedNodes = [];
       for (let i = 0; i < nodes.length; i++) {
         const n = nodes[i];
-
-        // Mekanisme "Gerak Tumbuh" (Sprouting spring animation)
-        if (elapsed > n.birthDelay) {
-          const age = elapsed - n.birthDelay;
-          const tNorm = Math.min(1, age / 700);
-          n.grown = 1 - Math.exp(-4 * tNorm) * Math.cos(6 * tNorm);
-        }
 
         const x1 = (n.x * brainScale) * cosY + (n.z * brainScale) * sinY;
         const z1 = -(n.x * brainScale) * sinY + (n.z * brainScale) * cosY;
@@ -553,52 +592,43 @@ document.addEventListener('DOMContentLoaded', () => {
         const screenY = centerY + y1 * persp;
 
         // Pendaran napas denyut
-        const breath = 1 + 0.12 * Math.sin(elapsed * 0.003 + n.pulseTimer);
-        const renderSize = Math.max(0.1, n.baseSize * n.grown * breath * persp);
-        const depthAlpha = Math.max(0.18, Math.min(1, (z2 + 120) / 240));
+        const breath = 1 + 0.1 * Math.sin(elapsed * 0.0035 + n.pulseTimer);
+        const renderSize = Math.max(1.5, n.baseSize * breath * persp);
+        const depthAlpha = Math.max(0.28, Math.min(1, (z2 + 130) / 260));
 
         projectedNodes[i] = {
           sx: screenX,
           sy: screenY,
           sz: z2,
           radius: renderSize,
-          alpha: depthAlpha * n.grown,
+          alpha: depthAlpha,
           color: n.color,
           isHub: n.isHub,
-          name: n.name,
-          grown: n.grown
+          name: n.name
         };
       }
 
-      // Gambar garis penghubung yang tumbuh
+      // Gambar garis penghubung sinapsis
       for (let i = 0; i < edges.length; i++) {
         const e = edges[i];
-        if (elapsed > e.birthDelay) {
-          e.growth = Math.min(1, e.growth + 0.025);
-        }
-        if (e.growth <= 0) continue;
-
         const pA = projectedNodes[e.from];
         const pB = projectedNodes[e.to];
-        if (!pA || !pB || pA.grown < 0.1 || pB.grown < 0.1) continue;
+        if (!pA || !pB) continue;
 
-        const lineAlpha = (pA.alpha + pB.alpha) * 0.32 * e.growth;
-        if (lineAlpha < 0.04) continue;
-
-        const targetX = pA.sx + (pB.sx - pA.sx) * e.growth;
-        const targetY = pA.sy + (pB.sy - pA.sy) * e.growth;
+        const lineAlpha = (pA.alpha + pB.alpha) * 0.28;
+        if (lineAlpha < 0.05) continue;
 
         ctx.beginPath();
         ctx.moveTo(pA.sx, pA.sy);
-        ctx.lineTo(targetX, targetY);
+        ctx.lineTo(pB.sx, pB.sy);
         ctx.strokeStyle = `rgba(56, 189, 248, ${lineAlpha.toFixed(2)})`;
         ctx.lineWidth = 1;
         ctx.stroke();
       }
 
-      // Pulsa data listrik berjalan
-      if (Math.random() < 0.16 && pulses.length < 20) {
-        spawnPulse();
+      // Pulsa data listrik berjalan sepanjang serabut sinapsis
+      if (Math.random() < 0.2 && pulses.length < 26) {
+        spawnPulse(0);
       }
 
       for (let i = pulses.length - 1; i >= 0; i--) {
@@ -615,33 +645,37 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const px = pA.sx + (pB.sx - pA.sx) * p.progress;
         const py = pA.sy + (pB.sy - pA.sy) * p.progress;
-        const pulseAlpha = Math.min(pA.alpha, pB.alpha);
+        const pulseAlpha = Math.min(pA.alpha, pB.alpha) * 0.95;
 
         ctx.beginPath();
-        ctx.arc(px, py, 1.8, 0, Math.PI * 2);
+        ctx.arc(px, py, 2.2, 0, Math.PI * 2);
         ctx.fillStyle = p.color === '#FFFFFF' 
-          ? `rgba(255, 255, 255, ${pulseAlpha})` 
-          : `rgba(56, 189, 248, ${pulseAlpha})`;
+          ? `rgba(255, 255, 255, ${pulseAlpha.toFixed(2)})` 
+          : `rgba(56, 189, 248, ${pulseAlpha.toFixed(2)})`;
         ctx.fill();
       }
 
-      // Gambar simpul urut kedalaman Z
+      // Gambar simpul diurutkan berdasarkan kedalaman Z (depth sort)
       const sortedIndices = Array.from({ length: nodes.length }, (_, i) => i)
         .sort((i1, i2) => projectedNodes[i1].sz - projectedNodes[i2].sz);
 
       for (let idx of sortedIndices) {
         const pn = projectedNodes[idx];
-        if (pn.radius <= 0.1 || pn.alpha <= 0.02) continue;
 
-        // Pendaran aura hub utama
-        if (pn.isHub && pn.alpha > 0.35) {
+        // Pendaran aura hub teknologi
+        if (pn.isHub) {
           ctx.beginPath();
-          ctx.arc(pn.sx, pn.sy, pn.radius * 2.8, 0, Math.PI * 2);
-          ctx.fillStyle = `rgba(14, 165, 233, ${(pn.alpha * 0.2).toFixed(2)})`;
+          ctx.arc(pn.sx, pn.sy, pn.radius * 3.4, 0, Math.PI * 2);
+          ctx.fillStyle = `rgba(14, 165, 233, ${(pn.alpha * 0.22).toFixed(2)})`;
+          ctx.fill();
+
+          ctx.beginPath();
+          ctx.arc(pn.sx, pn.sy, pn.radius * 2.0, 0, Math.PI * 2);
+          ctx.fillStyle = `rgba(56, 189, 248, ${(pn.alpha * 0.35).toFixed(2)})`;
           ctx.fill();
         }
 
-        // Lingkaran simpul utama
+        // Inti lingkaran simpul
         ctx.beginPath();
         ctx.arc(pn.sx, pn.sy, pn.radius, 0, Math.PI * 2);
         ctx.fillStyle = pn.isHub 
@@ -650,28 +684,17 @@ document.addEventListener('DOMContentLoaded', () => {
         ctx.fill();
 
         // Label hub teknologi
-        if (pn.isHub && pn.alpha > 0.55 && width > 380) {
-          ctx.font = '600 9px "JetBrains Mono", monospace';
-          ctx.fillStyle = `rgba(255, 255, 255, ${(pn.alpha * 0.85).toFixed(2)})`;
+        if (pn.isHub && width > 340) {
+          ctx.font = '600 10px "JetBrains Mono", monospace';
+          ctx.fillStyle = `rgba(255, 255, 255, ${(pn.alpha * 0.9).toFixed(2)})`;
           ctx.textAlign = 'center';
-          ctx.fillText(pn.name, pn.sx, pn.sy + pn.radius + 12);
+          ctx.fillText(pn.name, pn.sx, pn.sy + pn.radius + 14);
         }
       }
-
-      animFrame = requestAnimationFrame(render);
     }
 
-    // Pause otomatis saat hero keluar dari viewport
-    if (heroTrack && 'IntersectionObserver' in window) {
-      const io = new IntersectionObserver((entries) => {
-        const entry = entries[0];
-        isVisible = entry.isIntersecting;
-        if (isVisible && !animFrame) {
-          animFrame = requestAnimationFrame(render);
-        }
-      }, { threshold: 0.05 });
-      io.observe(heroTrack);
-    }
+    window.addEventListener('resize', updateSize, { passive: true });
+    window.addEventListener('orientationchange', updateSize);
 
     updateSize();
     generateBrain();
