@@ -265,6 +265,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // --------------------------------------------------------------------------
   const nav = document.querySelector('.clean-editorial-nav');
   const lightSections = document.querySelectorAll('.alethia-solutions-section');
+  const navBrandLogo = document.getElementById('navBrandLogo');
 
   let navTicking = false;
   function updateNavContrast() {
@@ -283,8 +284,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (isOverLight) {
       nav.classList.add('theme-light-mode');
+      if (navBrandLogo && !navBrandLogo.src.includes('kst-dark.png')) {
+        navBrandLogo.src = '../shared/assets/kst-dark.png';
+      }
     } else {
       nav.classList.remove('theme-light-mode');
+      if (navBrandLogo && !navBrandLogo.src.includes('kst-light.png')) {
+        navBrandLogo.src = '../shared/assets/kst-light.png';
+      }
     }
     navTicking = false;
   }

@@ -248,29 +248,19 @@ ul { list-style: none; }
   gap: 0.85rem;
 }
 
-.kst-brand-logo {
-  height: 44px;
+.nav-brand-logo,
+.drawer-brand-logo {
+  height: 26px;
   width: auto;
   display: block;
   object-fit: contain;
   transition: opacity 0.25s ease;
 }
 
-.kst-brand-logo.kst-logo-dark {
-  display: none;
-}
-
-.clean-editorial-nav.theme-light-mode .kst-brand-logo.kst-logo-light {
-  display: none;
-}
-
-.clean-editorial-nav.theme-light-mode .kst-brand-logo.kst-logo-dark {
-  display: block;
-}
-
 @media (max-width: 768px) {
-  .kst-brand-logo {
-    height: 36px;
+  .nav-brand-logo,
+  .drawer-brand-logo {
+    height: 22px;
   }
 }
 
