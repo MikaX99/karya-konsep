@@ -284,13 +284,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (isOverLight) {
       nav.classList.add('theme-light-mode');
-      if (navBrandLogo && !navBrandLogo.src.includes('kst-dark.png')) {
-        navBrandLogo.src = '../shared/assets/kst-dark.png';
+      // kst-light.png adalah logo biru gelap resmi untuk background terang
+      if (navBrandLogo && !navBrandLogo.src.includes('kst-light.png')) {
+        navBrandLogo.src = 'kst-light.png';
       }
     } else {
       nav.classList.remove('theme-light-mode');
-      if (navBrandLogo && !navBrandLogo.src.includes('kst-light.png')) {
-        navBrandLogo.src = '../shared/assets/kst-light.png';
+      // kst-dark.png adalah logo putih resmi untuk background gelap alam
+      if (navBrandLogo && !navBrandLogo.src.includes('kst-dark.png')) {
+        navBrandLogo.src = 'kst-dark.png';
       }
     }
     navTicking = false;
