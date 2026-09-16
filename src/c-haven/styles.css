@@ -1,0 +1,1518 @@
+/* ==========================================================================
+   KARYA SISTEM — EXACT KARYA SISTEM CONSTRUCTIONS AESTHETIC & ARCHITECTURE
+   Reference: https://www.karyasistemconstructions.com.au/
+   Palette: Karya Sistem Stone Grey (#D5D7DA, #CFD2D5), Royal Cobalt Blue (#0C388D), Pure Black (#0A0C0E)
+   Typography: Space Grotesk / Plus Jakarta Sans (Editorial Sans), JetBrains Mono (Metadata)
+   ========================================================================== */
+
+:root {
+  /* Exact Karya Sistem Color Palette */
+  --ks-blue: #0C388D;
+  --ks-blue-hover: #082663;
+  --ks-blue-subtle: rgba(12, 56, 141, 0.08);
+  --ks-bg-hero: #D5D7DA;
+  --ks-bg-stone: #D0D3D6;
+  --ks-bg-white: #FFFFFF;
+  --ks-bg-light: #F8F8FA;
+  --ks-bg-surface: #E8EAEB;
+  --ks-dark-surface: #0C388D;
+
+  /* Text Colors */
+  --text-dark: #0A0C0E;
+  --text-secondary: #4A525D;
+  --text-muted: #6B7280;
+  --text-light: #FFFFFF;
+  --text-light-muted: #A0AEC0;
+
+  /* Hairlines & Borders */
+  --border-light: rgba(10, 12, 14, 0.12);
+  --border-dark: rgba(255, 255, 255, 0.15);
+
+  /* Pure Architectural Swiss Typography System */
+  --font-display: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', 'SF Mono', Consolas, monospace;
+
+  /* Transitions */
+  --ease-ks: cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-slow: 0.75s var(--ease-ks);
+  --transition-smooth: 0.35s var(--ease-ks);
+}
+
+/* Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--ks-bg-hero);
+  color: var(--text-dark);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  overflow-x: hidden;
+  background-color: var(--ks-bg-hero);
+  color: var(--text-dark);
+}
+
+/* 12-Column Editorial Grid System (Exact Karya Sistem l-grid) */
+.l-grid {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 3rem;
+}
+
+/* Divider Line */
+.ks-divider {
+  width: 100%;
+  height: 1px;
+  background-color: var(--border-light);
+  margin: 2rem 0;
+}
+
+.ks-divider.dark {
+  background-color: var(--border-dark);
+}
+
+/* Dot Heading (Exact Karya Sistem Feature) */
+.dot-heading {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-dark);
+  line-height: 1.45;
+}
+
+.dot-heading .square-dot {
+  width: 8px;
+  height: 8px;
+  background-color: var(--ks-blue);
+  display: inline-block;
+  margin-top: 5px;
+  flex-shrink: 0;
+}
+
+/* --------------------------------------------------------------------------
+   NAVIGATION (EXACT KARYA SISTEM FLOATING STICKY HEADER WITH EXPANDABLE MENU)
+   -------------------------------------------------------------------------- */
+.ks-main-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 150;
+  padding: 1.75rem 3rem;
+  background: transparent !important;
+  border: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  pointer-events: none;
+}
+
+.ks-main-header * {
+  pointer-events: auto;
+}
+
+.ks-main-header.hidden-over-footer {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-100%);
+}
+
+.ks-header-row {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.ks-logo-group {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  color: var(--ks-blue);
+  transition: transform var(--transition-smooth);
+}
+
+.ks-logo-group:hover {
+  transform: scale(1.05);
+}
+
+/* Modular Karya Sistem SVG Geometric Icon */
+.ks-logo-svg {
+  width: 32px;
+  height: 32px;
+}
+
+.ks-center-menu-trigger {
+  display: flex;
+  justify-content: center;
+}
+
+.btn-ks-header-menu {
+  display: inline-flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 0.65rem 2.25rem;
+  background-color: #E2E4E8;
+  color: #0A0C0E;
+  border: 1px solid rgba(10, 12, 14, 0.08);
+  border-radius: 4px;
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-ks-header-menu:hover {
+  background-color: #FFFFFF;
+  border-color: rgba(12, 56, 141, 0.25);
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 8px 20px rgba(12, 56, 141, 0.12);
+}
+
+/* Interactive Enlarged Navbar Menu on Scroll Down */
+.ks-main-header.scrolled .btn-ks-header-menu {
+  padding: 0.95rem 3.25rem;
+  font-size: 0.95rem;
+  background-color: #FFFFFF;
+  border-color: rgba(12, 56, 141, 0.2);
+  box-shadow: 0 10px 30px rgba(12, 56, 141, 0.14), 0 2px 8px rgba(0, 0, 0, 0.04);
+  transform: scale(1.08);
+}
+
+.ks-main-header.scrolled .btn-ks-header-menu:hover {
+  transform: scale(1.12) translateY(-2px);
+  box-shadow: 0 14px 35px rgba(12, 56, 141, 0.2);
+}
+
+.btn-ks-header-menu .menu-bars-glyph {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 22px;
+  transition: transform 0.3s ease;
+}
+
+.ks-main-header.scrolled .btn-ks-header-menu .menu-bars-glyph {
+  transform: scale(1.1);
+}
+
+.btn-ks-header-menu .menu-bars-glyph span {
+  width: 100%;
+  height: 1.5px;
+  background-color: #0A0C0E;
+}
+
+.ks-header-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.ks-talk-link {
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  text-decoration: none;
+  transition: color var(--transition-smooth);
+  position: relative;
+  padding-bottom: 2px;
+}
+
+.ks-talk-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1.5px;
+  background-color: var(--ks-blue);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform var(--transition-smooth);
+}
+
+.ks-talk-link:hover {
+  color: var(--ks-blue);
+}
+
+.ks-talk-link:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* --------------------------------------------------------------------------
+   SECTION 1: HERO VIEWPORT (SCROLL-DRIVEN CARD EXPANSION & CARDINAL LAYOUT)
+   -------------------------------------------------------------------------- */
+.ks-hero-expand-track {
+  height: 200vh;
+  position: relative;
+  background-color: var(--ks-bg-hero);
+  width: 100%;
+}
+
+.hero-sticky-stage {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--ks-bg-hero);
+}
+
+/* Cardinal Compass Text Elements */
+.cardinal-tag {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  position: absolute;
+  z-index: 5;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+  user-select: none;
+}
+
+.cardinal-top {
+  top: 7rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.cardinal-bottom {
+  bottom: 3.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.cardinal-word {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5.5vw, 5rem);
+  font-weight: 800;
+  color: var(--text-dark);
+  letter-spacing: -0.035em;
+  position: absolute;
+  z-index: 5;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+  user-select: none;
+}
+
+.cardinal-left {
+  left: 5vw;
+}
+
+.cardinal-right {
+  right: 5vw;
+}
+
+/* Center Expanding Architectural Card */
+.hero-expanding-card-frame {
+  width: clamp(340px, 35vw, 540px);
+  height: clamp(320px, 44vh, 520px);
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.18);
+  will-change: width, height, border-radius;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: box-shadow 0.3s ease;
+}
+
+.hero-expanding-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.hero-card-brand-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.45) 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 2.5rem 1.5rem;
+  color: #FFFFFF;
+  text-align: center;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.hero-overlay-brand {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.25rem;
+}
+
+.hero-overlay-tag {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* --------------------------------------------------------------------------
+   FULL-SCREEN MENU OVERLAY (KARYA SISTEM CINEMATIC SLIDE-DOWN DRAWER)
+   -------------------------------------------------------------------------- */
+.ks-menu-drawer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: var(--ks-blue);
+  color: #FFFFFF;
+  z-index: 200;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 3rem 4rem;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-100%);
+  transition: transform 0.75s cubic-bezier(0.76, 0, 0.24, 1), opacity 0.4s ease;
+}
+
+.ks-menu-drawer.active {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.drawer-top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.btn-drawer-close {
+  background: none;
+  border: none;
+  color: #FFFFFF;
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: opacity var(--transition-smooth);
+}
+
+.btn-drawer-close:hover {
+  opacity: 0.75;
+}
+
+.drawer-links-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.drawer-nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.drawer-nav-link {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5.5vw, 4.5rem);
+  font-weight: 800;
+  color: #FFFFFF;
+  text-decoration: none;
+  line-height: 1.05;
+  opacity: 0;
+  transform: translateY(35px);
+  transition: opacity 0.5s var(--ease-ks), transform 0.5s var(--ease-ks), color 0.3s ease;
+}
+
+.ks-menu-drawer.active .drawer-nav-link {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.ks-menu-drawer.active .drawer-nav-link:nth-child(1) { transition-delay: 0.20s; }
+.ks-menu-drawer.active .drawer-nav-link:nth-child(2) { transition-delay: 0.26s; }
+.ks-menu-drawer.active .drawer-nav-link:nth-child(3) { transition-delay: 0.32s; }
+.ks-menu-drawer.active .drawer-nav-link:nth-child(4) { transition-delay: 0.38s; }
+.ks-menu-drawer.active .drawer-nav-link:nth-child(5) { transition-delay: 0.44s; }
+.ks-menu-drawer.active .drawer-nav-link:nth-child(6) { transition-delay: 0.50s; }
+
+.drawer-nav-link:hover {
+  transform: translateX(15px);
+  opacity: 0.85;
+}
+
+.drawer-contact-col {
+  border-left: 1px solid rgba(255, 255, 255, 0.2);
+  padding-left: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* --------------------------------------------------------------------------
+   SECTION 1: HERO VIEWPORT (EXACT KARYA SISTEM BLOCKHERO)
+   -------------------------------------------------------------------------- */
+.ks-hero-block {
+  padding-top: 9rem;
+  padding-bottom: 5rem;
+  background-color: var(--ks-bg-white);
+  overflow: hidden;
+}
+
+.hero-top-spacing {
+  margin-bottom: 2.5rem;
+}
+
+.hero-giant-wordmark-wrapper {
+  margin-bottom: 3.5rem;
+  overflow: visible;
+}
+
+.hero-giant-wordmark {
+  font-family: var(--font-display);
+  font-size: clamp(3.5rem, 11.5vw, 12rem);
+  font-weight: 900;
+  line-height: 0.88;
+  letter-spacing: -0.045em;
+  color: var(--ks-blue);
+  text-transform: uppercase;
+  display: block;
+}
+
+.hero-meta-subheading-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 3rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border-light);
+}
+
+/* Full-Width Cinematic Media Inset */
+.hero-media-inset {
+  width: 100%;
+  height: clamp(450px, 65vh, 780px);
+  overflow: hidden;
+  position: relative;
+  background-color: var(--ks-bg-surface);
+}
+
+.hero-media-inset img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.hero-media-inset:hover img {
+  transform: scale(1.04);
+}
+
+/* --------------------------------------------------------------------------
+   SECTION 2: BLOCKSECTIONINTRO (EXACT KARYA SISTEM PHILOSOPHY & GUIDING VALUES)
+   -------------------------------------------------------------------------- */
+.ks-section-intro {
+  padding: 8rem 0;
+  background-color: var(--ks-bg-light);
+  border-top: 1px solid var(--border-light);
+}
+
+.section-intro-grid {
+  display: grid;
+  grid-template-columns: 0.35fr 0.65fr;
+  gap: 4rem;
+  align-items: flex-start;
+}
+
+.intro-left-col {
+  position: sticky;
+  top: 8rem;
+}
+
+.intro-right-col {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.intro-lead-paragraph {
+  font-size: clamp(1.25rem, 2.2vw, 1.85rem);
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--text-dark);
+  letter-spacing: -0.015em;
+}
+
+.intro-sub-paragraph {
+  font-size: 1.0625rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+.intro-image-embed {
+  width: 100%;
+  height: 480px;
+  overflow: hidden;
+  margin-top: 2rem;
+  background-color: var(--ks-bg-surface);
+}
+
+.intro-image-embed img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.intro-image-embed:hover img {
+  transform: scale(1.04);
+}
+
+/* --------------------------------------------------------------------------
+   SECTION 3: BLOCKCARDPROJECTS (EXACT KARYA SISTEM FEATURED PROJECTS)
+   -------------------------------------------------------------------------- */
+.ks-card-projects-section {
+  padding: 9rem 0;
+  background-color: var(--ks-bg-white);
+  border-top: 1px solid var(--border-light);
+}
+
+.projects-header-grid {
+  display: grid;
+  grid-template-columns: 0.35fr 0.65fr;
+  gap: 4rem;
+  margin-bottom: 5rem;
+}
+
+.projects-header-right-box {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+.btn-ks-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.85rem 1.75rem;
+  background-color: var(--ks-blue);
+  color: #FFFFFF;
+  font-family: var(--font-display);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 2px;
+  transition: background-color var(--transition-smooth), transform var(--transition-smooth);
+}
+
+.btn-ks-primary:hover {
+  background-color: var(--ks-blue-hover);
+  transform: translateY(-2px);
+}
+
+/* Project Cards Grid (Exact Aspect Ratio 682/816) */
+.project-cards-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.project-card-single-center {
+  max-width: 820px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.project-card-2col-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+}
+
+.ks-project-card {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: var(--text-dark);
+  cursor: pointer;
+  position: relative;
+}
+
+.card-text-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border-light);
+  margin-bottom: 1.25rem;
+}
+
+.card-heading-title {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--text-dark);
+  letter-spacing: -0.02em;
+  transition: color var(--transition-smooth);
+}
+
+.ks-project-card:hover .card-heading-title {
+  color: var(--ks-blue);
+}
+
+.card-date-mono {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.card-portrait-media {
+  width: 100%;
+  aspect-ratio: 682 / 816;
+  overflow: hidden;
+  background-color: var(--ks-bg-surface);
+  position: relative;
+}
+
+.card-portrait-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.ks-project-card:hover .card-portrait-media img {
+  transform: scale(1.05);
+}
+
+/* --------------------------------------------------------------------------
+   SECTION 4: BLOCKLISTCAROUSEL (EXACT KARYA SISTEM OUR COLLABORATORS)
+   -------------------------------------------------------------------------- */
+.ks-collaborators-block {
+  padding: 9rem 0;
+  background-color: var(--ks-bg-light);
+  border-top: 1px solid var(--border-light);
+}
+
+.collab-block-grid {
+  display: grid;
+  grid-template-columns: 0.4fr 0.6fr;
+  gap: 5rem;
+  align-items: flex-start;
+}
+
+.collab-left-list-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.collab-lead-desc {
+  font-size: 1.0625rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  margin-bottom: 2rem;
+}
+
+.ks-collab-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.collab-list-item {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: 1.5rem 0;
+  border-top: 1px solid var(--border-light);
+}
+
+.collab-item-name {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--text-dark);
+}
+
+.collab-item-role {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  color: var(--text-secondary);
+  text-align: right;
+}
+
+.collab-right-media-col {
+  position: sticky;
+  top: 6rem;
+  width: 100%;
+}
+
+/* Architectural Supported Brands Mosaic Grid */
+.collab-brands-mosaic {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  width: 100%;
+}
+
+.brand-ecosystem-card {
+  background-color: #FFFFFF;
+  border: 1px solid rgba(10, 12, 14, 0.08);
+  border-radius: 4px;
+  padding: 1.5rem 1.65rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 135px;
+  transition: all var(--transition-smooth);
+  position: relative;
+  overflow: hidden;
+}
+
+.brand-ecosystem-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 100%;
+  background-color: var(--ks-blue);
+  opacity: 0;
+  transition: opacity var(--transition-smooth);
+}
+
+.brand-ecosystem-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(12, 56, 141, 0.25);
+  box-shadow: 0 8px 25px rgba(12, 56, 141, 0.06);
+}
+
+.brand-ecosystem-card:hover::before {
+  opacity: 1;
+}
+
+.brand-card-top-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+}
+
+.brand-category-badge {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ks-blue);
+}
+
+.brand-status-dot {
+  width: 6px;
+  height: 6px;
+  background-color: #10B981;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.brand-card-name {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--text-dark);
+  letter-spacing: -0.02em;
+  margin-bottom: 0.25rem;
+}
+
+.brand-card-role-desc {
+  font-size: 0.8125rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+  .collab-brands-mosaic {
+    grid-template-columns: 1fr;
+  }
+}
+
+.collab-right-media-col img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.collab-right-media-col:hover img {
+  transform: scale(1.03);
+}
+
+/* --------------------------------------------------------------------------
+   SECTION 5: EXPERTISE & SERVICE PILLARS (EDITORIAL ACCORDION)
+   -------------------------------------------------------------------------- */
+.ks-expertise-section {
+  padding: 9rem 0;
+  background-color: var(--ks-bg-white);
+  border-top: 1px solid var(--border-light);
+}
+
+.expertise-2col-layout {
+  display: grid;
+  grid-template-columns: 0.35fr 0.65fr;
+  gap: 4rem;
+}
+
+.ks-accordion-item {
+  border-top: 1px solid var(--border-light);
+  transition: background var(--transition-smooth);
+}
+
+.ks-accordion-header {
+  padding: 2rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  user-select: none;
+}
+
+.acc-title-text {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--text-dark);
+  transition: color var(--transition-smooth);
+}
+
+.ks-accordion-item:hover .acc-title-text,
+.ks-accordion-item.active .acc-title-text {
+  color: var(--ks-blue);
+}
+
+.acc-plus-glyph {
+  font-family: var(--font-mono);
+  font-size: 1.5rem;
+  color: var(--text-secondary);
+}
+
+.ks-accordion-body {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height var(--transition-slow), opacity var(--transition-smooth);
+}
+
+.ks-accordion-item.active .ks-accordion-body {
+  max-height: 400px;
+  opacity: 1;
+  padding-bottom: 2.5rem;
+}
+
+.acc-body-content-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  padding-top: 1rem;
+}
+
+/* --------------------------------------------------------------------------
+   SECTION 6: CLIENT STORIES & ROSTER (ASYMMETRIC EDITORIAL ARCHIVE)
+   -------------------------------------------------------------------------- */
+.ks-clients-roster-block {
+  padding: 9rem 0 10rem;
+  background-color: var(--ks-bg-hero);
+  border-top: 1px solid var(--border-light);
+}
+
+.editorial-archive-grid {
+  display: grid;
+  grid-template-columns: 0.42fr 0.58fr;
+  gap: 6rem;
+  align-items: flex-start;
+}
+
+.editorial-archive-left-sticky {
+  position: sticky;
+  top: 7.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.archive-lead-h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 4.2vw, 3.75rem);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+  color: var(--text-dark);
+  margin-top: 1rem;
+  margin-bottom: 1.75rem;
+}
+
+.archive-lead-desc {
+  font-size: 1.0625rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  margin-bottom: 2.5rem;
+}
+
+.archive-metric-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--ks-blue);
+  text-transform: uppercase;
+  padding: 0.65rem 1.25rem;
+  background-color: rgba(12, 56, 141, 0.08);
+  border: 1px solid rgba(12, 56, 141, 0.15);
+  border-radius: 4px;
+  width: fit-content;
+}
+
+/* Right Stream: Sector Groups */
+.editorial-archive-right-stream {
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+}
+
+.archive-sector-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.archive-sector-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 0.85rem;
+  border-bottom: 1.5px solid var(--text-dark);
+  margin-bottom: 1.25rem;
+}
+
+.archive-sector-title {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-dark);
+}
+
+.archive-sector-count {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--ks-blue);
+  font-weight: 600;
+}
+
+.archive-client-entry {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: baseline;
+  gap: 1.5rem;
+  padding: 1.15rem 0;
+  border-bottom: 1px solid var(--border-light);
+  transition: all var(--transition-smooth);
+}
+
+.archive-client-entry:hover {
+  transform: translateX(8px);
+  border-bottom-color: var(--ks-blue);
+}
+
+.archive-client-name {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  letter-spacing: -0.015em;
+  margin-bottom: 0.2rem;
+  transition: color var(--transition-smooth);
+}
+
+.archive-client-entry:hover .archive-client-name {
+  color: var(--ks-blue);
+}
+
+.archive-client-scope {
+  font-size: 0.8125rem;
+  color: var(--text-secondary);
+}
+
+.archive-client-year {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+@media (max-width: 900px) {
+  .editorial-archive-grid {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+  .editorial-archive-left-sticky {
+    position: static;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   MAIN CONTAINER (Z-INDEX 2 FOR STICKY FOOTER CURTAIN UNVEIL)
+   -------------------------------------------------------------------------- */
+main {
+  position: relative;
+  z-index: 2;
+  background-color: var(--ks-bg-hero);
+  box-shadow: 0 45px 100px rgba(0, 0, 0, 0.28);
+}
+
+/* --------------------------------------------------------------------------
+   SECTION 7: BLOCKFOOTER (STICKY PARALLAX CURTAIN REVEAL & FLOATING WIDGET)
+   -------------------------------------------------------------------------- */
+.ks-block-footer {
+  background-color: var(--ks-blue);
+  color: #FFFFFF;
+  min-height: 92vh;
+  padding: 8rem 0 3.5rem;
+  position: sticky;
+  bottom: 0;
+  z-index: 1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.footer-simple-top-row {
+  display: flex;
+  justify-content: flex-end;
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto 5rem;
+  padding: 0 3rem;
+}
+
+.footer-social-links-row {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+.footer-social-link {
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  font-weight: 500;
+  color: #FFFFFF;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  transition: opacity var(--transition-smooth), transform var(--transition-smooth);
+}
+
+.footer-social-link:hover {
+  opacity: 0.8;
+  transform: translateY(-2px);
+}
+
+.footer-social-link .diagonal-arrow {
+  font-size: 1rem;
+  line-height: 1;
+}
+
+/* Monumental Giant Wordmark in Royal Blue Footer */
+.footer-giant-wordmark-row {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  margin-top: auto;
+  margin-bottom: auto;
+  user-select: none;
+  text-align: center;
+  overflow: visible;
+  padding: 2rem 1vw;
+}
+
+.footer-giant-logo-text {
+  font-family: var(--font-display);
+  font-size: clamp(4rem, 21.5vw, 34rem);
+  font-weight: 900;
+  line-height: 0.82;
+  letter-spacing: -0.055em;
+  color: #E2E4E8;
+  display: block;
+  text-transform: capitalize;
+  white-space: nowrap;
+  padding-bottom: 0.05em;
+}
+
+/* Bottom Bar */
+.ks-footer-bottom-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1440px;
+  width: 100%;
+  margin: 4rem auto 0;
+  padding: 2rem 3rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+@media (max-width: 768px) {
+  .footer-simple-top-row {
+    flex-direction: column;
+    gap: 3rem;
+    align-items: flex-start;
+    padding: 0 1.5rem;
+  }
+  .footer-floating-project-widget {
+    align-items: flex-start;
+    width: 100%;
+  }
+  .footer-project-thumb-card {
+    width: 100%;
+  }
+  .ks-footer-bottom-bar {
+    padding: 2rem 1.5rem 0;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   CONSULTATION MODAL (KARYA SISTEM CLEAN LUXURY DIALOG)
+   -------------------------------------------------------------------------- */
+.ks-modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(10, 12, 14, 0.85);
+  backdrop-filter: blur(25px);
+  z-index: 300;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition-smooth);
+}
+
+.ks-modal-backdrop.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.ks-modal-box {
+  background: #FFFFFF;
+  border-radius: 4px;
+  padding: 3rem;
+  max-width: 520px;
+  width: 100%;
+  position: relative;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.3);
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-size: 1.75rem;
+  cursor: pointer;
+  line-height: 1;
+}
+
+/* Direct Contact Channels (Karya Sistem Themed) */
+.modal-direct-channels {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.85rem;
+  margin-bottom: 1.75rem;
+}
+
+.modal-channel-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  padding: 0.75rem 1rem;
+  background-color: #F4F5F8;
+  border: 1px solid rgba(10, 12, 14, 0.08);
+  border-radius: 4px;
+  text-decoration: none;
+  font-family: var(--font-body);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  transition: all var(--transition-smooth);
+}
+
+.modal-channel-chip:hover {
+  background-color: #FFFFFF;
+  border-color: var(--ks-blue);
+  color: var(--ks-blue);
+  box-shadow: 0 4px 12px rgba(12, 56, 141, 0.08);
+  transform: translateY(-1px);
+}
+
+.modal-channel-chip.whatsapp {
+  background-color: var(--ks-blue-subtle);
+  border-color: rgba(12, 56, 141, 0.2);
+  color: var(--ks-blue);
+  font-weight: 700;
+}
+
+.modal-channel-chip.whatsapp:hover {
+  background-color: var(--ks-blue);
+  color: #FFFFFF;
+  border-color: var(--ks-blue);
+}
+
+.modal-channel-chip svg {
+  flex-shrink: 0;
+}
+
+.form-group-block {
+  margin-bottom: 1.25rem;
+}
+
+.form-label-text {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--text-secondary);
+  margin-bottom: 0.4rem;
+  text-transform: uppercase;
+}
+
+.form-input-field,
+.form-select-field {
+  width: 100%;
+  padding: 0.85rem 1.15rem;
+  background: #F9F9FB;
+  border: 1px solid var(--border-light);
+  border-radius: 2px;
+  color: var(--text-dark);
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+}
+
+.form-input-field:focus,
+.form-select-field:focus {
+  border-color: var(--ks-blue);
+  outline: none;
+  background: #FFFFFF;
+}
+
+.form-submit-btn {
+  width: 100%;
+  padding: 1rem 1.5rem;
+  background: var(--ks-blue);
+  color: #FFFFFF;
+  border: none;
+  border-radius: 2px;
+  font-family: var(--font-display);
+  font-size: 0.875rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: background var(--transition-smooth);
+}
+
+.form-submit-btn:hover {
+  background: var(--ks-blue-hover);
+}
+
+/* --------------------------------------------------------------------------
+   RESPONSIVE MEDIA QUERIES
+   -------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .section-intro-grid,
+  .projects-header-grid,
+  .project-card-2col-row,
+  .collab-block-grid,
+  .expertise-2col-layout,
+  .footer-top-invite-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .intro-left-col,
+  .collab-right-media-col {
+    position: static;
+  }
+  .clients-roster-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .footer-columns-nav-row {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .l-grid {
+    padding: 0 1.5rem;
+  }
+  .ks-main-header {
+    padding: 1.5rem;
+  }
+  .clients-roster-grid {
+    grid-template-columns: 1fr;
+  }
+  .footer-columns-nav-row {
+    grid-template-columns: 1fr;
+  }
+  .drawer-links-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ==========================================================================
+   KARYA-KONSEP — tambahan untuk konten v1 (2026-09-17)
+   ========================================================================== */
+.konsep-switch {
+  position: fixed; left: 1rem; bottom: 1rem; z-index: 9000;
+  font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.08em;
+  color: #fff; background: var(--ks-blue); padding: 0.45rem 0.8rem; border-radius: 999px;
+  text-decoration: none; box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+}
+.konsep-switch:hover { background: var(--ks-blue-hover); }
+
+.ks-h2 { font-family: var(--font-display); font-size: clamp(2.5rem, 4.5vw, 3.75rem); font-weight: 800; letter-spacing: -0.035em; color: var(--text-dark); margin-bottom: 2rem; line-height: 1.05; }
+.ks-h2-tight { font-size: clamp(2.25rem, 4vw, 3.25rem); margin-bottom: 1rem; }
+.ks-body-p { font-size: 1.0625rem; color: var(--text-secondary); line-height: 1.7; }
+
+.drawer-brand-text { font-family: var(--font-display); font-size: 1.25rem; font-weight: 800; color: #fff; }
+.drawer-quote { font-family: var(--font-body); font-size: 1.15rem; line-height: 1.55; color: #fff; }
+.drawer-contact-label { font-family: var(--font-mono); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; display: block; margin-bottom: 0.35rem; color: rgba(255,255,255,0.7); }
+.drawer-contact-phone { font-family: var(--font-display); font-size: 1.15rem; font-weight: 700; color: #fff; margin-bottom: 0.25rem; }
+.drawer-contact-email { font-family: var(--font-mono); font-size: 0.875rem; color: rgba(255,255,255,0.85); }
+.drawer-cta-link { display: inline-flex; align-items: center; gap: 0.5rem; color: #fff; text-decoration: none; font-family: var(--font-display); font-weight: 700; border-bottom: 1px solid #fff; padding-bottom: 3px; }
+.drawer-bottom-row { display: flex; align-items: center; justify-content: space-between; font-family: var(--font-mono); font-size: 0.75rem; color: rgba(255,255,255,0.7); flex-wrap: wrap; gap: 0.5rem; }
+
+.intro-badge-list { list-style: none; padding: 0; margin: 1.25rem 0 0; display: flex; flex-direction: column; gap: 0.5rem; font-family: var(--font-mono); font-size: 0.8125rem; color: var(--ks-blue); font-weight: 600; }
+.intro-pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin: 2rem 0 2.5rem; }
+.intro-pillars strong { display: block; font-family: var(--font-display); font-size: 1rem; font-weight: 700; color: var(--text-dark); margin-bottom: 0.4rem; }
+.intro-pillars p { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6; margin: 0; }
+
+.trust-list { list-style: none; padding: 0; margin: 0 0 1.5rem; display: flex; flex-direction: column; gap: 0.5rem; font-family: var(--font-mono); font-size: 0.8125rem; color: var(--text-dark); }
+.trust-list li::before { content: "✓ "; color: var(--ks-blue); }
+.card-tagline { font-size: 1rem; color: var(--text-secondary); margin: 1rem 0 0; line-height: 1.5; }
+
+.acc-desc-p { font-size: 1.0625rem; color: var(--text-secondary); line-height: 1.65; margin: 0; }
+.acc-points-col { display: flex; flex-direction: column; gap: 0.5rem; font-family: var(--font-mono); font-size: 0.8125rem; color: var(--text-dark); }
+
+/* Katalog: grid kartu produk memakai gaya brand-ecosystem-card */
+.ks-catalog-section { background: var(--ks-bg-light); }
+.ks-catalog-groups { display: flex; flex-direction: column; gap: 3rem; margin-top: 2.5rem; }
+.ks-catalog-groups .archive-sector-header { margin-bottom: 1rem; }
+.ks-product-grid { grid-template-columns: repeat(3, 1fr); }
+a.ks-product-card { text-decoration: none; color: inherit; transition: transform var(--transition-smooth, 0.25s), border-color var(--transition-smooth, 0.25s), box-shadow var(--transition-smooth, 0.25s); background: #fff; }
+a.ks-product-card:hover { transform: translateY(-3px); border-color: var(--ks-blue); box-shadow: 0 12px 30px rgba(12,56,141,0.08); }
+.ks-product-lines { font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-muted); line-height: 1.55; margin: 0.6rem 0 0.9rem; }
+.ks-product-cta { font-family: var(--font-mono); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.06em; color: var(--ks-blue); text-transform: uppercase; }
+
+/* Mitra: daftar grup + nama brand */
+.ks-partner-row { display: grid; grid-template-columns: 1fr auto; gap: 0.25rem 1rem; }
+.ks-partner-names { grid-column: 1 / -1; font-size: 0.9rem; color: var(--text-secondary); line-height: 1.8; margin: 0.35rem 0 0; }
+
+/* Klien: logo + nama; kolom kanan = solusi terpasang */
+.archive-client-main { display: flex; align-items: center; gap: 1rem; }
+.archive-client-logo { width: 44px; height: 44px; object-fit: contain; border-radius: 6px; border: 1px solid var(--border-light); background: #fff; padding: 4px; flex-shrink: 0; }
+.archive-client-year { text-align: right; max-width: 18ch; color: var(--ks-blue); text-transform: uppercase; letter-spacing: 0.04em; font-size: 0.68rem; align-self: center; }
+
+.ks-testimonial-list { display: flex; flex-direction: column; gap: 1.5rem; margin-top: 3rem; }
+.ks-testimonial { margin: 0; padding: 1.5rem 1.75rem; border-left: 3px solid var(--ks-blue); background: var(--ks-bg-light); }
+.ks-testimonial p { font-size: 1.05rem; line-height: 1.65; color: var(--text-dark); margin: 0 0 0.75rem; font-style: italic; }
+.ks-testimonial footer { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-muted); }
+
+.footer-simple-top-row { display: flex; justify-content: space-between; align-items: flex-start; gap: 2rem; flex-wrap: wrap; }
+.footer-contact-block { max-width: 46ch; display: flex; flex-direction: column; gap: 0.35rem; }
+.footer-contact-name { font-family: var(--font-display); font-weight: 800; font-size: 1.1rem; }
+.footer-contact-line { font-size: 0.85rem; opacity: 0.85; line-height: 1.5; }
+.footer-contact-line a { color: inherit; }
+
+.modal-title { font-family: var(--font-display); font-size: 1.6rem; font-weight: 800; margin-bottom: 0.4rem; color: var(--text-dark); letter-spacing: -0.02em; }
+.modal-sub { font-size: 0.9375rem; color: var(--text-secondary); margin-bottom: 1.5rem; line-height: 1.5; }
+
+@media (max-width: 900px) {
+  .intro-pillars { grid-template-columns: 1fr; }
+  .ks-product-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 640px) {
+  .ks-product-grid { grid-template-columns: 1fr; }
+  .archive-client-entry { grid-template-columns: 1fr; }
+  .archive-client-year { text-align: left; max-width: none; }
+}
+
+/* Hero mobile: kata "Solusi" / "Integrasi" ditumpuk di atas & bawah kartu, bukan menimpa */
+@media (max-width: 768px) {
+  .cardinal-word { font-size: 2.35rem; left: 0 !important; right: 0 !important; width: 100%; text-align: center; white-space: nowrap; }
+  .cardinal-left { top: 8.75rem; }
+  .cardinal-right { top: auto; bottom: 6.5rem; }
+  .cardinal-top { top: 5.5rem; }
+  .cardinal-bottom { bottom: 2.75rem; }
+}

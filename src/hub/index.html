@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Karya Sistem — Hub Konsep Desain</title>
+  <meta name="robots" content="noindex">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0f1114; --fg: #f3f4f1; --muted: #9aa0a6; --line: rgba(255,255,255,0.12);
+      --font: 'Plus Jakarta Sans', system-ui, sans-serif; --mono: 'JetBrains Mono', monospace;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--bg); color: var(--fg); font-family: var(--font); padding: clamp(1.25rem, 4vw, 3rem) clamp(1rem, 5vw, 4rem) 4rem; }
+    header { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; flex-wrap: wrap; border-bottom: 1px solid var(--line); padding-bottom: 1.25rem; margin-bottom: 2.5rem; }
+    header h1 { font-size: 1.1rem; font-weight: 800; margin: 0; letter-spacing: -0.01em; }
+    header span { font-family: var(--mono); font-size: 0.7rem; color: var(--muted); letter-spacing: 0.08em; text-transform: uppercase; }
+    .intro { max-width: 62ch; color: var(--muted); font-size: 1rem; line-height: 1.65; margin: 0 0 2.5rem; }
+    .intro strong { color: var(--fg); }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem; }
+    .card { display: flex; flex-direction: column; text-decoration: none; color: inherit; border: 1px solid var(--line); border-radius: 14px; overflow: hidden; background: #15181c; transition: transform 0.25s cubic-bezier(0.16,1,0.3,1), border-color 0.25s; }
+    .card:hover { transform: translateY(-4px); border-color: rgba(255,255,255,0.35); }
+    .swatch { height: 150px; display: grid; grid-template-columns: 3fr 1fr 1fr; }
+    .swatch i { display: block; }
+    .body { padding: 1.25rem 1.35rem 1.5rem; display: flex; flex-direction: column; gap: 0.6rem; flex: 1; }
+    .k { font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.1em; color: var(--muted); }
+    .card h2 { margin: 0; font-size: 1.5rem; font-weight: 800; letter-spacing: -0.02em; }
+    .card p { margin: 0; color: var(--muted); font-size: 0.92rem; line-height: 1.6; }
+    .meta { font-family: var(--mono); font-size: 0.68rem; color: var(--muted); line-height: 1.7; }
+    .go { margin-top: auto; padding-top: 0.75rem; font-weight: 700; font-size: 0.9rem; }
+    .go::after { content: " →"; }
+    .note { margin-top: 3rem; border-top: 1px solid var(--line); padding-top: 1.25rem; font-family: var(--mono); font-size: 0.72rem; color: var(--muted); line-height: 1.8; }
+    .note code { color: var(--fg); }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Karya Sistem — Hub Konsep Desain</h1>
+    <span>{{ company.name }} · konten tunggal dari v1 · 2026-09-17</span>
+  </header>
+
+  <p class="intro">
+    Tiga konsep, <strong>konten yang sama</strong> (4 layanan, 17 lini produk, 14 klien, 53 brand, kontak resmi) — yang berbeda hanya desain.
+    Buka masing-masing, gulir sampai bawah, coba di HP. Yang dipilih akan dilanjutkan sebagai situs produksi.
+  </p>
+
+  <div class="grid">
+    <a class="card" href="https://mikax99.github.io/karya1.0/" target="_blank" rel="noopener noreferrer">
+      <div class="swatch"><i style="background:#ffffff"></i><i style="background:#2563eb"></i><i style="background:#0f172a"></i></div>
+      <div class="body">
+        <span class="k">KONSEP A · LIVE SEKARANG</span>
+        <h2>v1 — Karya Sistem</h2>
+        <p>Situs yang sedang tayang. Terang/gelap, dwibahasa ID/EN, katalog 17 kartu, slider klien.</p>
+        <span class="meta">Next.js static export · GitHub Pages<br>github.com/MikaX99/karya1.0</span>
+        <span class="go">Buka situs live</span>
+      </div>
+    </a>
+
+    <a class="card" href="b-forest/">
+      <div class="swatch"><i style="background:#07180C"></i><i style="background:#C4F28A"></i><i style="background:#E2E4DC"></i></div>
+      <div class="body">
+        <span class="k">KONSEP B · FOREST</span>
+        <h2>Forest</h2>
+        <p>Deep forest + lime. Headline raksasa, panggung foto sinematik dengan parallax, marker interaktif, footer wordmark 16vw.</p>
+        <span class="meta">HTML/CSS/JS statis · Space Grotesk + Plus Jakarta Sans + JetBrains Mono<br>Sesuai spek Alethia (design.md)</span>
+        <span class="go">Buka konsep B</span>
+      </div>
+    </a>
+
+    <a class="card" href="c-haven/">
+      <div class="swatch"><i style="background:#D5D7DA"></i><i style="background:#0C388D"></i><i style="background:#0A0C0E"></i></div>
+      <div class="body">
+        <span class="k">KONSEP C · HAVEN</span>
+        <h2>Haven</h2>
+        <p>Terang, editorial Swiss, biru korporat. Hero kartu yang mengembang saat digulir, kartu foto, arsip klien bergaya katalog.</p>
+        <span class="meta">HTML/CSS/JS statis · Plus Jakarta Sans + JetBrains Mono<br>Satu-satunya konsep light-mode</span>
+        <span class="go">Buka konsep C</span>
+      </div>
+    </a>
+  </div>
+
+  <p class="note">
+    Catatan: angka klaim v1 (150+ proyek, 99.8% SLA, 87% repeat order, "klien sejak 20xx") <strong>sengaja tidak dibawa</strong> ke B/C sampai ada angka yang bisa dibuktikan.
+    Foto di B/C masih placeholder dari eksplorasi awal — akan diganti. Sumber konten: <code>shared/content.json</code>.
+  </p>
+</body>
+</html>

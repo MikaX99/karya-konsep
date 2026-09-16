@@ -1,0 +1,707 @@
+{
+  "_sumber": "Diangkat dari apps/karyasistem1.0 (v1, LIVE) 2026-09-17. Satu-satunya sumber konten untuk semua konsep. Klaim tanpa bukti (150+, 99.8%, 87%, 12+ sektor, 24/7) sengaja TIDAK dibawa.",
+  "company": {
+    "name": "PT. Karya Sistem Teknologi",
+    "legalName": "PT. Karya Sistem Teknologi",
+    "brandName": "Karya Sistem",
+    "tagline": "Solusi IT Enterprise Terpercaya",
+    "description": "Distributor resmi perangkat IT enterprise: server, networking, laptop, dan lisensi software bergaransi resmi untuk bisnis dan instansi di seluruh Indonesia.",
+    "address": "Rawa Makmur, Kel. Cakung Timur, Kec. Cakung, Kota Administrasi Jakarta Timur, DKI Jakarta 13910",
+    "phone": "+62 878-8120-0477",
+    "email": "sales@karyasistem.com",
+    "hours": "Senin – Jumat: 08.00 – 17.00 WIB",
+    "founded": 2024,
+    "positioning": "System Integrator & IT Solution Provider",
+    "badge": "IT System Integrator & Solutions Provider"
+  },
+  "whatsapp": {
+    "number": "6287881200477",
+    "displayNumber": "+62 878-8120-0477",
+    "defaultMessage": "Halo Karya Sistem, saya ingin berkonsultasi mengenai kebutuhan IT perusahaan kami."
+  },
+  "maps": {
+    "embedUrl": "https://maps.google.com/maps?q=-6.157864333267043,106.95494887976591&z=16&output=embed",
+    "googleMapsUrl": "https://maps.google.com/?q=-6.157864333267043,106.95494887976591"
+  },
+  "social": {
+    "facebook": "https://facebook.com/karyasistem",
+    "tiktok": "https://tiktok.com/@karyasistem",
+    "instagram": "https://instagram.com/karyasistem",
+    "linkedin": "https://linkedin.com/company/karyasistem"
+  },
+  "contact": {
+    "salesEmail": "sales@karyasistem.com",
+    "infoEmail": "info@karyasistem.com",
+    "phone": "+62 878-8120-0477",
+    "hours": "Senin – Jumat: 08.00 – 17.00 WIB",
+    "address": "Rawa Makmur, Kel. Cakung Timur, Kec. Cakung, Kota Administrasi Jakarta Timur, DKI Jakarta 13910"
+  },
+  "hero": {
+    "badge": "IT System Integrator & Solutions Provider",
+    "title": "Solusi & Integrasi IT untuk Operasional Bisnis Anda",
+    "desc": "Karya Sistem membantu perusahaan membangun, mengelola, dan mengintegrasikan infrastruktur jaringan, perangkat enterprise, keamanan IT, serta aplikasi bisnis terpadu.",
+    "ctaPrimary": "Konsultasi Gratis",
+    "ctaSecondary": "Lihat Layanan",
+    "trust": [
+      "100% Produk Original & Bergaransi Resmi",
+      "Pengiriman Cepat & Instalasi On-site",
+      "Dukungan Teknis Purna Jual Terpercaya"
+    ]
+  },
+  "about": {
+    "title": "About Karya Sistem",
+    "tagline": "Technology Solutions Built Around Your Business",
+    "lead": "PT Karya Sistem Teknologi adalah System Integrator dan IT Solution Provider yang menyediakan solusi teknologi terintegrasi untuk membantu perusahaan meningkatkan efisiensi operasional, keamanan, dan keberlanjutan bisnis.",
+    "pillars": [
+      {
+        "title": "System Integrator & IT Provider",
+        "desc": "Solusi teknologi terpadu untuk meningkatkan efisiensi operasional, keamanan, dan keberlanjutan bisnis."
+      },
+      {
+        "title": "Layanan Terintegrasi End-to-End",
+        "desc": "Konsultasi, pengadaan teknologi, implementasi, integrasi sistem, hingga managed support berkelanjutan."
+      },
+      {
+        "title": "Vendor-Agnostic & Custom-Fit",
+        "desc": "Tidak terikat satu brand; solusi dipilih murni berbasis kebutuhan spesifik dan ROI jangka panjang Anda."
+      }
+    ],
+    "badges": [
+      "System Integrator",
+      "IT Solution Provider",
+      "Vendor-Agnostic"
+    ]
+  },
+  "services": {
+    "badge": "Layanan Kami",
+    "title": "Solusi & Layanan IT Terintegrasi",
+    "subtitle": "Layanan teknologi komprehensif mulai dari infrastruktur IT, aplikasi bisnis, keamanan siber, hingga managed IT terpadu.",
+    "items": [
+      {
+        "id": "infra",
+        "no": "01",
+        "title": "IT Infrastructure & Procurement",
+        "desc": "Perencanaan, pengadaan, implementasi, dan pengelolaan kebutuhan IT untuk mendukung operasional bisnis yang andal dan scalable.",
+        "points": [
+          "IT Infrastructure Design & Deployment",
+          "Network & Infrastructure",
+          "Server, Storage & Backup",
+          "IT Hardware & Devices",
+          "Software & License Procurement",
+          "CCTV, UPS & Deployment",
+          "Backup & Disaster Recovery"
+        ]
+      },
+      {
+        "id": "app",
+        "no": "02",
+        "title": "Business Application & Digital Solution",
+        "desc": "Solusi aplikasi dan digital untuk membantu perusahaan mengelola proses bisnis, meningkatkan efisiensi, dan mempercepat transformasi digital.",
+        "points": [
+          "ERP Implementation & Integration",
+          "AI Solution & Automation",
+          "E-Commerce Development",
+          "Custom Web Application",
+          "Business Process Automation"
+        ]
+      },
+      {
+        "id": "sec",
+        "no": "03",
+        "title": "Cybersecurity",
+        "desc": "Solusi keamanan untuk melindungi perangkat, jaringan, sistem, dan data perusahaan dari berbagai ancaman siber.",
+        "points": [
+          "Endpoint Security & Protection",
+          "Firewall & Network Security",
+          "Security Assessment",
+          "Security Platform & Solution",
+          "Vulnerability & Pentest",
+          "Microsoft 365 Security"
+        ]
+      },
+      {
+        "id": "mgmt",
+        "no": "04",
+        "title": "Managed IT & Support",
+        "desc": "Layanan support, maintenance, dan monitoring untuk menjaga sistem IT tetap optimal, aman, dan berjalan secara berkelanjutan.",
+        "points": [
+          "IT Support & Helpdesk",
+          "IT Infrastructure Maintenance",
+          "Server & Network Monitoring",
+          "Cloud & Productivity Platform Support",
+          "ERP Support & Maintenance",
+          "Preventive Maintenance"
+        ]
+      }
+    ]
+  },
+  "catalog": {
+    "badge": "Katalog Perangkat",
+    "title": "Perangkat & Hardware Enterprise",
+    "subtitle": "Penyediaan server, jaringan, laptop bisnis, dan lisensi software bergaransi resmi vendor.",
+    "categories": [
+      "Server & Storage",
+      "Networking",
+      "Laptop & PC",
+      "Lisensi Software"
+    ],
+    "quoteLabel": "Minta Penawaran",
+    "products": [
+      {
+        "id": "srv-01",
+        "category": "Server & Storage",
+        "title": "Enterprise Network Storage",
+        "brand": "Synology NAS",
+        "lines": [
+          "DS1823xs+ 8-Bay NAS",
+          "RS2423+ 12-Bay Rack NAS",
+          "RS3621xs+ 12-Bay Enterprise NAS"
+        ],
+        "customSpec": true,
+        "priceDisplay": "Hubungi Sales",
+        "badge": "Garansi Resmi",
+        "waTemplate": "Halo Karya Sistem, saya ingin konsultasi kebutuhan Synology NAS (Enterprise Network Storage)."
+      },
+      {
+        "id": "srv-02",
+        "category": "Server & Storage",
+        "title": "Enterprise Rack & Tower Server",
+        "brand": "HPE ProLiant",
+        "lines": [
+          "ProLiant DL380 Gen11 Rack Server 2U",
+          "ProLiant DL360 Gen11 Rack Server 1U",
+          "ProLiant ML350 Gen11 Tower Server"
+        ],
+        "customSpec": true,
+        "priceDisplay": "Hubungi Sales",
+        "badge": "Garansi Resmi",
+        "waTemplate": "Halo Karya Sistem, saya ingin konsultasi kebutuhan HPE ProLiant (Enterprise Rack & Tower Server)."
+      },
+      {
+        "id": "srv-03",
+        "category": "Server & Storage",
+        "title": "Rack Server Enterprise",
+        "brand": "Dell PowerEdge",
+        "lines": [
+          "PowerEdge R760 Rack Server 2U",
+          "PowerEdge R660 Rack Server 1U",
+          "PowerEdge T560 Tower Server"
+        ],
+        "customSpec": true,
+        "priceDisplay": "Hubungi Sales",
+        "badge": "Garansi Resmi",
+        "waTemplate": "Halo Karya Sistem, saya ingin konsultasi kebutuhan Dell PowerEdge (Rack Server Enterprise)."
+      },
+      {
+        "id": "srv-04",
+        "category": "Server & Storage",
+        "title": "Cloud & Infrastructure",
+        "brand": "Sangfor",
+        "lines": [
+          "HCI (Hyper-Converged Infrastructure)",
+          "VDI (Virtual Desktop Infrastructure)",
+          "Hybrid Cloud",
+          "Managed Cloud Services"
+        ],
+        "customSpec": true,
+        "priceDisplay": "Hubungi Sales",
+        "badge": "Garansi Resmi",
+        "waTemplate": "Halo Karya Sistem, saya ingin konsultasi kebutuhan Sangfor (Cloud & Infrastructure)."
+      },
+      {
+        "id": "net-01",
+        "category": "Networking",
+        "title": "Enterprise Network Switching",
+        "brand": "Cisco Catalyst",
+        "lines": [
+          "Catalyst Managed Switch",
+          "Enterprise Switch",
+          "PoE Switch",
+          "Network Switching"
+        ],
+        "customSpec": true,
+        "priceDisplay": "Hubungi Sales",
+        "badge": "Garansi Resmi",
+        "waTemplate": "Halo Karya Sistem, saya ingin konsultasi kebutuhan Cisco Catalyst (Enterprise Network Switching)."
+      },
+      {
+        "id": "net-02",
+        "category": "Networking",
+        "title": "Enterprise Wireless Networking",
+        "brand": "Ubiquiti UniFi",
+        "lines": [
+          "UniFi Access Point",
+          "Enterprise Wi-Fi",
+          "Wireless Network",
+          "Wi-Fi 6 / Wi-Fi 7"
+        ],
+        "customSpec": true,
+        "priceDisplay": "Hubungi Sales",
+        "badge": "Garansi Resmi",
+        "waTemplate": "Halo Karya Sistem, saya ingin konsultasi kebutuhan Ubiquiti UniFi (Enterprise Wireless Networking)."
+      },
+      {
+        "id": "net-03",
+        "category": "Networking",
+        "title": "Enterprise Routing & Networking",
+        "brand": "MikroTik",
+        "lines": [
+          "Enterprise Router",
+          "Core Routing",
+          "Network Management",
+          "Firewall & Routing"
+        ],
+        "customSpec": true,
+        "priceDisplay": "Hubungi Sales",
+        "badge": "Garansi Resmi",
+        "waTemplate": "Halo Karya Sistem, saya ingin konsultasi kebutuhan MikroTik (Enterprise Routing & Networking)."
+      },
+      {
+        "id": "net-04",
+        "category": "Networking",
+        "title": "Network Security & Firewall",
+        "brand": "Fortinet FortiGate",
+        "lines": [
+          "Next-Gen Firewall",
+          "Network Security",
+          "SD-WAN",
+          "Secure Networking"
+        ],
+        "customSpec": true,
+        "priceDisplay": "Hubungi Sales",
+        "badge": "Garansi Resmi",
+        "waTemplate": "Halo Karya Sistem, saya ingin konsultasi kebutuhan Fortinet FortiGate (Network Security & Firewall)."
+      },
+      {
+        "id": "net-05",
+        "category": "Networking",
+        "title": "Sophos Security",
+        "brand": "Sophos",
+        "lines": [
+          "Next-Gen Firewall",
+          "Network Security",
+          "Endpoint Security",
+          "Email Security"
+        ],
+        "customSpec": true,
+        "priceDisplay": "Hubungi Sales",
+        "badge": "Garansi Resmi",
+        "waTemplate": "Halo Karya Sistem, saya ingin konsultasi kebutuhan Sophos (Sophos Security)."
+      },
+      {
+        "id": "net-06",
+        "category": "Networking",
+        "title": "Cybersecurity & Network Security",
+        "brand": "Sangfor",
+        "lines": [
+          "Next-Gen Firewall",
+          "Network Security",
+          "NDR / XDR",
+          "SASE / Zero Trust"
+        ],
+        "customSpec": true,
+        "priceDisplay": "Hubungi Sales",
+        "badge": "Garansi Resmi",
+        "waTemplate": "Halo Karya Sistem, saya ingin konsultasi kebutuhan Sangfor (Cybersecurity & Network Security)."
+      },
+      {
+        "id": "lpt-01",
+        "category": "Laptop & PC",
+        "title": "Business Laptop & Workstation",
+        "brand": "Lenovo Business",
+        "lines": [
+          "ThinkPad",
+          "ThinkBook",
+          "ThinkPad Workstation",
+          "Business Laptop"
+        ],
+        "customSpec": true,
+        "priceDisplay": "Hubungi Sales",
+        "badge": "Garansi Resmi",
+        "waTemplate": "Halo Karya Sistem, saya ingin konsultasi kebutuhan Lenovo Business (Business Laptop & Workstation)."
+      },
+      {
+        "id": "lpt-02",
+        "category": "Laptop & PC",
+        "title": "Business PC & Workstation",
+        "brand": "HP Enterprise",
+        "lines": [
+          "Business Laptop",
+          "Desktop PC",
+          "Workstation",
+          "All-in-One PC"
+        ],
+        "customSpec": true,
+        "priceDisplay": "Hubungi Sales",
+        "badge": "Garansi Resmi",
+        "waTemplate": "Halo Karya Sistem, saya ingin konsultasi kebutuhan HP Enterprise (Business PC & Workstation)."
+      },
+      {
+        "id": "lpt-03",
+        "category": "Laptop & PC",
+        "title": "Business Laptop & PC",
+        "brand": "Dell Enterprise",
+        "lines": [
+          "Latitude",
+          "Precision Workstation",
+          "OptiPlex",
+          "Business Desktop"
+        ],
+        "customSpec": true,
+        "priceDisplay": "Hubungi Sales",
+        "badge": "Garansi Resmi",
+        "waTemplate": "Halo Karya Sistem, saya ingin konsultasi kebutuhan Dell Enterprise (Business Laptop & PC)."
+      },
+      {
+        "id": "sw-01",
+        "category": "Lisensi Software",
+        "title": "Business Productivity & Software",
+        "brand": "Microsoft",
+        "lines": [
+          "Microsoft 365",
+          "Windows Server",
+          "Windows 11 Pro",
+          "Azure & Cloud Services"
+        ],
+        "customSpec": false,
+        "priceDisplay": "Hubungi Sales",
+        "badge": "Lisensi Resmi",
+        "waTemplate": "Halo Karya Sistem, saya ingin konsultasi kebutuhan Microsoft (Business Productivity & Software)."
+      },
+      {
+        "id": "sw-02",
+        "category": "Lisensi Software",
+        "title": "Enterprise Security Software",
+        "brand": "Kaspersky",
+        "lines": [
+          "Endpoint Security",
+          "Antivirus Protection",
+          "EDR / XDR",
+          "Cloud Security"
+        ],
+        "customSpec": false,
+        "priceDisplay": "Hubungi Sales",
+        "badge": "Lisensi Resmi",
+        "waTemplate": "Halo Karya Sistem, saya ingin konsultasi kebutuhan Kaspersky (Enterprise Security Software)."
+      },
+      {
+        "id": "sw-03",
+        "category": "Lisensi Software",
+        "title": "Cybersecurity Software & Services",
+        "brand": "Sophos",
+        "lines": [
+          "Endpoint Security",
+          "Intercept X",
+          "XDR / MDR",
+          "Email Security"
+        ],
+        "customSpec": false,
+        "priceDisplay": "Hubungi Sales",
+        "badge": "Lisensi Resmi",
+        "waTemplate": "Halo Karya Sistem, saya ingin konsultasi kebutuhan Sophos (Cybersecurity Software & Services)."
+      },
+      {
+        "id": "sw-04",
+        "category": "Lisensi Software",
+        "title": "Virtualization & Cloud Software",
+        "brand": "Sangfor",
+        "lines": [
+          "VDI",
+          "HCI Software",
+          "Virtualization",
+          "Cloud Platform",
+          "NDR / XDR"
+        ],
+        "customSpec": false,
+        "priceDisplay": "Hubungi Sales",
+        "badge": "Lisensi Resmi",
+        "waTemplate": "Halo Karya Sistem, saya ingin konsultasi kebutuhan Sangfor (Virtualization & Cloud Software)."
+      }
+    ]
+  },
+  "partners": {
+    "badge": "Brand Partner",
+    "title": "Mitra Teknologi & Principal",
+    "subtitle": "Dukungan 49+ brand ekosistem IT enterprise global dari infrastruktur jaringan, virtualisasi, disaster recovery, hingga sistem manajemen, ERP & email kolaborasi.",
+    "_catatan": "Penilaian 2026-09-17: bedakan reseller resmi vs open source — belum diputuskan Mika; sementara ditampilkan sebagai 'ekosistem teknologi', bukan 'partner resmi'.",
+    "groups": {
+      "Network, Hardware & Cyber Security": [
+        "Cisco",
+        "MikroTik",
+        "Ubiquiti Networks",
+        "Sangfor",
+        "Sophos",
+        "Fortinet",
+        "TP-Link Omada",
+        "Juniper Networks",
+        "HPE",
+        "Dell Enterprise",
+        "Lenovo Enterprise",
+        "Kaspersky",
+        "Hitachi Vantara",
+        "Barracuda",
+        "Symantec",
+        "Synology",
+        "Drobo",
+        "JumpServer",
+        "ZITADEL",
+        "Action1"
+      ],
+      "Virtualization, Cloud & Backup Storage": [
+        "VMware vSphere",
+        "VMware vCenter",
+        "Microsoft Hyper-V",
+        "Windows Server",
+        "Proxmox VE",
+        "Red Hat",
+        "Veeam Backup",
+        "NetApp",
+        "Vinchin Backup",
+        "Macrium Reflect",
+        "Hasleo Software",
+        "CloudExplorer Lite",
+        "NethServer",
+        "Zentyal",
+        "MS System Center",
+        "Plesk"
+      ],
+      "Enterprise Apps, Collaboration & IT Management": [
+        "Microsoft 365",
+        "MS Exchange",
+        "Exchange Online",
+        "Zimbra",
+        "grommunio",
+        "BlueMind",
+        "iRedMail",
+        "Nextcloud",
+        "ONLYOFFICE",
+        "Odoo ERP",
+        "NinjaOne",
+        "GLPI ITSM",
+        "ServiceDesk Plus",
+        "AvePoint",
+        "BitTitan",
+        "DataEase",
+        "Metabase"
+      ]
+    }
+  },
+  "clients": {
+    "badge": "Client Area",
+    "title": "Dipercaya oleh Perusahaan Enterprise",
+    "subtitle": "Karya Sistem menjadi mitra integrasi teknologi bagi berbagai sektor industri di seluruh Indonesia.",
+    "items": [
+      {
+        "id": "client-01",
+        "name": "ALVA GROUP",
+        "abbr": "AG",
+        "industry": "Holding & Investment",
+        "logo": "assets/clients/ag.png",
+        "solutions": [
+          "Networking",
+          "Server & Storage"
+        ],
+        "since": "2021",
+        "color": "#1E87DA",
+        "testimonial": "Karya Sistem memberikan dukungan infrastruktur jaringan yang sangat andal dan responsif untuk mendukung integrasi operasional seluruh unit bisnis kami."
+      },
+      {
+        "id": "client-02",
+        "name": "Indonesia Raya Academy",
+        "abbr": "IRA",
+        "industry": "Pendidikan & Pelatihan",
+        "logo": "assets/clients/ira.png",
+        "solutions": [
+          "Web Application",
+          "Lisensi Software"
+        ],
+        "since": "2022",
+        "color": "#0284C7",
+        "testimonial": "Implementasi platform sistem terpadu berjalan lancar dan mempermudah operasional akademik kami secara signifikan."
+      },
+      {
+        "id": "client-03",
+        "name": "NEXMAN COFFEE",
+        "abbr": "NKG",
+        "industry": "Food & Beverage (F&B)",
+        "logo": "assets/clients/nkg.png",
+        "solutions": [
+          "Networking",
+          "Perangkat Keras IT"
+        ],
+        "since": "2023",
+        "color": "#D97706"
+      },
+      {
+        "id": "client-04",
+        "name": "PENGADILAN MILITER II-08 JAKARTA",
+        "abbr": "PMIL",
+        "industry": "Pemerintahan & Hukum",
+        "logo": "assets/clients/dilmil.png",
+        "solutions": [
+          "Infrastruktur Jaringan",
+          "Lisensi Software"
+        ],
+        "since": "2021",
+        "color": "#6366F1",
+        "testimonial": "Pengadaan perangkat dan pemeliharaan sistem IT dilaksanakan secara profesional, transparan, dan tepat waktu."
+      },
+      {
+        "id": "client-05",
+        "name": "PT DEMODAS INTERNATIONAL GROUP",
+        "abbr": "DIG",
+        "industry": "Perdagangan Internasional",
+        "logo": "assets/clients/dig.png",
+        "solutions": [
+          "Server & Storage",
+          "Networking"
+        ],
+        "since": "2022",
+        "color": "#059669"
+      },
+      {
+        "id": "client-06",
+        "name": "PT Global Agung Siamasei",
+        "abbr": "GAS",
+        "industry": "Distribusi & Logistik",
+        "logo": "assets/clients/gas.png",
+        "solutions": [
+          "Networking",
+          "Laptop & PC"
+        ],
+        "since": "2022",
+        "color": "#1E87DA"
+      },
+      {
+        "id": "client-07",
+        "name": "PLN Energi Gas",
+        "abbr": "PLN",
+        "industry": "Energi & Kelistrikan",
+        "logo": "assets/clients/pln.png",
+        "solutions": [
+          "Sistem Manajemen",
+          "Hardware IT"
+        ],
+        "since": "2023",
+        "color": "#10B981"
+      },
+      {
+        "id": "client-08",
+        "name": "PT Karya Abadi Indotech",
+        "abbr": "KAI",
+        "industry": "Teknologi & Rekayasa",
+        "logo": "assets/clients/kai.png",
+        "solutions": [
+          "Server & Storage",
+          "Disaster Recovery"
+        ],
+        "since": "2021",
+        "color": "#0284C7",
+        "testimonial": "Solusi disaster recovery dan backup data otomatis dari Karya Sistem sangat solid menjaga kontinuitas sistem kerja perusahaan kami."
+      },
+      {
+        "id": "client-09",
+        "name": "PT Layanan Kapal Indonesia",
+        "abbr": "LKI",
+        "industry": "Maritim & Logistik Laut",
+        "logo": "assets/clients/lki.png",
+        "solutions": [
+          "Infrastruktur Jaringan",
+          "Hardware Enterprise"
+        ],
+        "since": "2022",
+        "color": "#0D9488"
+      },
+      {
+        "id": "client-10",
+        "name": "PT Merpati Wahana Raya",
+        "abbr": "MWR",
+        "industry": "Konstruksi & Properti",
+        "logo": "assets/clients/mwr.png",
+        "solutions": [
+          "Networking",
+          "Lisensi Software"
+        ],
+        "since": "2021",
+        "color": "#DC2626"
+      },
+      {
+        "id": "client-11",
+        "name": "PT NEXTIVE GEMILANG",
+        "abbr": "NXG",
+        "industry": "Teknologi & Digital",
+        "logo": "assets/clients/ng.png",
+        "solutions": [
+          "Web Application",
+          "Cloud Services"
+        ],
+        "since": "2023",
+        "color": "#8B5CF6"
+      },
+      {
+        "id": "client-12",
+        "name": "PT Petrokindo Sapta Gemilang",
+        "abbr": "PSG",
+        "industry": "Energi & Pertambangan",
+        "logo": "assets/clients/psg.png",
+        "solutions": [
+          "Server Enterprise",
+          "Infrastruktur Jaringan"
+        ],
+        "since": "2020",
+        "color": "#D97706",
+        "testimonial": "Karya Sistem selalu menyediakan perangkat berkualitas tinggi dengan garansi resmi dan dukungan teknis on-site yang tanggap."
+      },
+      {
+        "id": "client-13",
+        "name": "PT SILICAG GLOBAL INTERNATIONAL",
+        "abbr": "SGI",
+        "industry": "Ekspor Impor & Manufaktur",
+        "logo": "assets/clients/sgi.png",
+        "solutions": [
+          "Hardware Enterprise",
+          "Lisensi Software"
+        ],
+        "since": "2022",
+        "color": "#DB2777"
+      },
+      {
+        "id": "client-14",
+        "name": "PT Glow Industri Herbal Care (Maklon Skincare Kosmetik)",
+        "abbr": "GIHC",
+        "industry": "Industri Herbal & Farmasi",
+        "logo": "assets/clients/gihc.png",
+        "solutions": [
+          "Sistem Manajemen",
+          "Hardware IT"
+        ],
+        "since": "2023",
+        "color": "#10B981"
+      }
+    ]
+  },
+  "values": {
+    "badge": "Keunggulan",
+    "title": "Mengapa Memilih Karya Sistem",
+    "subtitle": "Mitra integrasi teknologi terpercaya berorientasi pada keberlanjutan, efisiensi, dan keandalan sistem bisnis Anda.",
+    "_catatan": "Penilaian 2026-09-17: ganti gaya CLASSIFIED → alasan nyata; menunggu Mika. Sementara pakai 3 pilar v1 tanpa angka.",
+    "items": [
+      {
+        "title": "Easy Integrations",
+        "tagline": "Integrasi Mulus & Sistem Terpadu"
+      },
+      {
+        "title": "Smart Deployment",
+        "tagline": "Implementasi Efisien & Skalabilitas Fleksibel"
+      },
+      {
+        "title": "Realtime Monitoring",
+        "tagline": "Wawasan Performa & Optimalisasi Berkelanjutan"
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Solusi & Integrasi IT Enterprise Indonesia",
+    "rights": "All rights reserved."
+  }
+}

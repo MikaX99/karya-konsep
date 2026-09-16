@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "karya-konsep",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": ["-m", "http.server", "3941", "-d", "/Users/imac/Projects/apps/karya-konsep/dist"],
+      "port": 3941
+    }
+  ]
+}

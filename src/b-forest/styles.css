@@ -1,0 +1,1673 @@
+/* ==========================================================================
+   KARYA SISTEM — EXACT REFERENCE ENGINE (styles.css)
+   Cache-Buster Version: 20260827_V43_INTERACTIVE_HUD_POPUP_MARKERS
+   Features:
+   - 100% Clean Transparent Editorial Navbar
+   - Kinetic Living Clean Text CTA (Arrow Glide Loop)
+   - Interactive Floating HUD Pop-up Telemetry Cards on Mouseover in Section 2
+   - Exact Alethia Reference Accordion (Solid Pale Lime Active Card)
+   - Exact Alethia Reference Section 5 (Solid White Tight Geometric Headline)
+   - Exact Alethia Reference Section 4 (Light Stone + Panoramic Window Cards)
+   - Horizontal Full-Bleed "karya sistem" Giant Footer
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700;800;900&display=swap');
+
+:root {
+  --color-deep-forest: #07180C;
+  --color-dark-moss: #0D1E10;
+  --color-forest-subtle: #09190D;
+  --color-black-pure: #000000;
+  --color-stone-light: #E2E4DC;
+
+  /* Typography */
+  --text-pure-white: #FFFFFF;
+  --text-warm-white: #F5F6F0;
+  --text-muted-white: #D7DAD1;
+  --text-soft-grey: #9AA095;
+  --text-dark-stone: #121813;
+
+  /* Accent Lime */
+  --accent-lime: #C4F28A;
+  --accent-lime-hover: #D2FF9B;
+  --accent-moss: #687F39;
+
+  /* Frosted Glass System */
+  --glass-bar-bg: rgba(18, 38, 22, 0.45);
+  --glass-bar-border: rgba(255, 255, 255, 0.14);
+  --glass-blur: blur(16px);
+
+  /* Fonts */
+  --font-display: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: 'Plus Jakarta Sans', -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* Geometry */
+  --radius-pill: 9999px;
+  --radius-card: 20px;
+  --radius-tag: 4px;
+  --radius-sm: 6px;
+  --ease-smooth: cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-smooth: 0.25s var(--ease-smooth);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: var(--font-body);
+  background-color: var(--color-deep-forest);
+  color: var(--text-warm-white);
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  min-height: 100dvh;
+  line-height: 1.5;
+  background: var(--color-deep-forest);
+  overflow-x: hidden;
+  position: relative;
+}
+
+a { color: inherit; text-decoration: none; }
+button { font-family: inherit; cursor: pointer; border: none; background: none; }
+ul { list-style: none; }
+
+:focus-visible {
+  outline: 2px solid var(--accent-lime);
+  outline-offset: 4px;
+}
+
+.container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 3.5rem;
+}
+
+/* --------------------------------------------------------------------------
+   0. FIXED CINEMATIC NATURE STAGE WITH MOUSE PARALLAX & WIND SWAY
+   -------------------------------------------------------------------------- */
+.fixed-cinematic-stage {
+  position: fixed;
+  top: -5%; left: -5%;
+  width: 110vw; height: 110vh;
+  background-image: linear-gradient(180deg, rgba(7, 24, 12, 0.68) 0%, rgba(7, 24, 12, 0.4) 45%, rgba(7, 24, 12, 0.88) 100%),
+                    url('alethia_macro_landscape.jpg');
+  background-size: cover;
+  background-position: center;
+  pointer-events: none;
+  z-index: 0;
+  transform: translate3d(0, 0, 0);
+  transition: transform 0.15s ease-out;
+  will-change: transform;
+}
+
+.wind-spores-canvas {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* EXACT REFERENCE LIME PILL TAG */
+.reference-lime-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-tag);
+  background: var(--accent-lime);
+  color: var(--color-deep-forest);
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+/* --------------------------------------------------------------------------
+   KINETIC CLEAN TEXT CTA (NO CAPSULE, CONTINUOUS NOTICEABLE MOTION)
+   -------------------------------------------------------------------------- */
+.kinetic-text-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--font-display);
+  font-size: 0.9375rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  color: var(--accent-lime);
+  background: transparent;
+  border: none;
+  padding: 0.35rem 0;
+  text-transform: uppercase;
+  cursor: pointer;
+  position: relative;
+  text-decoration: none;
+  transition: color var(--transition-smooth);
+}
+
+.kinetic-text-cta .kinetic-arrow {
+  font-size: 1.25rem;
+  line-height: 1;
+  display: inline-block;
+  color: var(--accent-lime);
+  animation: kineticArrowGlide 1.8s ease-in-out infinite;
+  transition: transform var(--transition-smooth), color var(--transition-smooth);
+}
+
+@keyframes kineticArrowGlide {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(7px);
+  }
+}
+
+.kinetic-text-cta:hover {
+  color: #FFFFFF;
+}
+
+.kinetic-text-cta:hover .kinetic-arrow {
+  animation: none;
+  transform: translateX(11px);
+  color: #FFFFFF;
+}
+
+.kinetic-text-cta::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--accent-lime);
+  transition: width var(--transition-smooth);
+}
+
+.kinetic-text-cta:hover::after {
+  width: 100%;
+}
+
+.reference-cta-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  width: 100%;
+  padding: 0.85rem 1.5rem;
+  background: var(--accent-lime);
+  border: none;
+  border-radius: 4px;
+  color: var(--color-deep-forest);
+  font-family: var(--font-display);
+  font-size: 0.9375rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all var(--transition-smooth);
+}
+
+.reference-cta-button:hover {
+  background: #FFFFFF;
+  color: var(--color-deep-forest);
+}
+
+/* --------------------------------------------------------------------------
+   1. CLEAN TEXT NAVBAR (100% TRANSPARENT WITH DYNAMIC AUTO-CONTRAST)
+   -------------------------------------------------------------------------- */
+.clean-editorial-nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  padding: 2.25rem 0;
+  background: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border: none;
+  transition: all 0.3s var(--ease-smooth);
+}
+
+.nav-container-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 3.5rem;
+}
+
+.nav-clean-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.brand-clean-emblem {
+  width: 32px; height: 32px;
+  background: var(--accent-lime);
+  color: var(--color-deep-forest);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.brand-clean-title {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  color: #FFFFFF;
+  line-height: 1;
+  transition: color 0.3s ease;
+}
+
+.nav-clean-right {
+  display: flex;
+  align-items: center;
+  gap: 2.25rem;
+}
+
+.btn-clean-menu {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-display);
+  font-size: 0.9375rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--text-warm-white);
+  transition: color 0.3s ease;
+}
+
+.btn-clean-menu:hover {
+  color: var(--accent-lime);
+}
+
+.btn-clean-menu .menu-glyph {
+  font-family: var(--font-mono);
+  font-size: 1.25rem;
+  line-height: 1;
+  color: var(--accent-lime);
+  transition: color 0.3s ease;
+}
+
+/* DYNAMIC AUTO-CONTRAST WHEN PASSING OVER LIGHT SECTIONS */
+.clean-editorial-nav.theme-light-mode .brand-clean-title {
+  color: #07180C;
+}
+
+.clean-editorial-nav.theme-light-mode .brand-clean-emblem {
+  background: #07180C;
+  color: var(--accent-lime);
+}
+
+.clean-editorial-nav.theme-light-mode .btn-clean-menu {
+  color: #07180C;
+}
+
+.clean-editorial-nav.theme-light-mode .btn-clean-menu .menu-glyph {
+  color: #07180C;
+}
+
+.clean-editorial-nav.theme-light-mode .btn-clean-menu:hover {
+  color: #2F5910;
+}
+
+.clean-editorial-nav.theme-light-mode .kinetic-text-cta {
+  color: #07180C;
+}
+
+.clean-editorial-nav.theme-light-mode .kinetic-text-cta .kinetic-arrow {
+  color: #07180C;
+}
+
+.clean-editorial-nav.theme-light-mode .kinetic-text-cta::after {
+  background: #07180C;
+}
+
+.clean-editorial-nav.theme-light-mode .kinetic-text-cta:hover {
+  color: #2F5910;
+}
+
+.clean-editorial-nav.theme-light-mode .kinetic-text-cta:hover .kinetic-arrow {
+  color: #2F5910;
+}
+
+/* --------------------------------------------------------------------------
+   2. CINEMATIC FULL-SCREEN MENU CURTAIN OVERLAY
+   -------------------------------------------------------------------------- */
+.cinematic-menu-curtain {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: 2000;
+  background: rgba(5, 15, 8, 0.98);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2.5rem 3.5rem;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-100%);
+  transition: transform 0.35s var(--ease-smooth), opacity 0.35s var(--ease-smooth);
+  will-change: transform, opacity;
+}
+
+.cinematic-menu-curtain.active {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.menu-curtain-top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.btn-curtain-close {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-display);
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--accent-lime);
+  padding: 0.6rem 1.35rem;
+  border-radius: var(--radius-pill);
+  background: rgba(196, 242, 138, 0.12);
+  border: 1px solid rgba(196, 242, 138, 0.3);
+  transition: all var(--transition-smooth);
+}
+
+.btn-curtain-close:hover {
+  background: var(--accent-lime);
+  color: var(--color-deep-forest);
+}
+
+.menu-curtain-main-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 5rem;
+  align-items: center;
+  margin: auto 0;
+}
+
+.curtain-links-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.curtain-nav-link {
+  display: flex;
+  align-items: baseline;
+  gap: 1.5rem;
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5.5vw, 4.75rem);
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: var(--text-warm-white);
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.curtain-nav-link .nav-number-mono {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--accent-lime);
+}
+
+.curtain-nav-link:hover {
+  transform: translateX(16px);
+  color: var(--accent-lime);
+}
+
+.curtain-right-editorial-column {
+  border-left: 1px solid rgba(255, 255, 255, 0.12);
+  padding-left: 4.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  background: transparent;
+}
+
+.curtain-editorial-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.curtain-meta-label {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  color: var(--accent-lime);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.curtain-editorial-quote {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--text-pure-white);
+  line-height: 1.35;
+  letter-spacing: -0.02em;
+}
+
+.curtain-editorial-sub {
+  font-size: 0.875rem;
+  color: var(--text-soft-grey);
+  line-height: 1.6;
+  max-width: 38ch;
+}
+
+.curtain-editorial-location {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-warm-white);
+}
+
+.menu-curtain-bottom-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-family: var(--font-display);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-soft-grey);
+}
+
+/* --------------------------------------------------------------------------
+   SECTION 1: HERO UTAMA
+   -------------------------------------------------------------------------- */
+.alethia-hero-viewport {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: 9.5rem;
+  padding-bottom: 2.5rem;
+  position: relative;
+  background: transparent;
+  z-index: 10;
+  overflow: hidden;
+}
+
+.hero-center-content-box {
+  position: relative;
+  z-index: 10;
+  padding: 2rem 0;
+}
+
+.hero-editorial-headline {
+  font-family: var(--font-display);
+  font-size: clamp(3.75rem, 7.5vw, 7.25rem);
+  font-weight: 800;
+  line-height: 0.95;
+  letter-spacing: -0.042em;
+  color: var(--text-pure-white);
+  max-width: 100%;
+  margin-top: 1rem;
+  margin-bottom: 2.75rem;
+  text-shadow: 0 6px 35px rgba(0, 0, 0, 0.7);
+}
+
+.hero-footer-row {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding-top: 1.5rem;
+  border-top: none;
+}
+
+.hero-footer-copy-text {
+  font-size: 1.0625rem;
+  color: var(--text-muted-white);
+  line-height: 1.45;
+  max-width: 50ch;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.hero-scroll-indicator {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-display);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--accent-lime);
+  text-transform: uppercase;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* --------------------------------------------------------------------------
+   SECTION 2: ECOSYSTEM INTELLIGENCE & INTERACTIVE HUD POPUP MARKERS
+   -------------------------------------------------------------------------- */
+.alethia-ecosystem-section-organic {
+  min-height: 100vh;
+  padding: 8rem 0 6rem;
+  position: relative;
+  background: transparent;
+  z-index: 10;
+  overflow: visible;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.ecosystem-organic-header-grid {
+  display: grid;
+  grid-template-columns: 0.7fr 1.3fr;
+  gap: 4rem;
+  align-items: flex-start;
+  position: relative;
+  z-index: 5;
+}
+
+.ecosystem-organic-left-tag {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--text-muted-white);
+  letter-spacing: 0.06em;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.ecosystem-organic-right-h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2.25rem, 4vw, 3.25rem);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  color: var(--text-pure-white);
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.organic-floating-markers-field {
+  position: relative;
+  min-height: 440px;
+  width: 100%;
+  margin-top: 4rem;
+  z-index: 25;
+}
+
+.floating-nature-marker {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  cursor: pointer;
+  z-index: 30;
+}
+
+.marker-pos-1 { top: 15%; left: 8%; }
+.marker-pos-2 { top: 42%; left: 42%; }
+.marker-pos-3 { top: 22%; right: 14%; }
+.marker-pos-4 { bottom: 10%; right: 28%; }
+
+.marker-lime-dot-cluster {
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  background: var(--accent-lime);
+  color: var(--color-deep-forest);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.95rem;
+  font-weight: 900;
+  box-shadow: 0 0 18px rgba(196, 242, 138, 0.5);
+  position: relative;
+  transition: transform var(--transition-smooth);
+}
+
+.floating-nature-marker:hover .marker-lime-dot-cluster {
+  transform: scale(1.15);
+  box-shadow: 0 0 25px rgba(196, 242, 138, 0.8);
+}
+
+.marker-floating-text-block {
+  display: flex;
+  flex-direction: column;
+}
+
+.marker-floating-title {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  color: var(--text-muted-white);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.marker-floating-stat {
+  font-family: var(--font-display);
+  font-size: 0.875rem;
+  font-weight: 800;
+  color: #FFFFFF;
+}
+
+/* --------------------------------------------------------------------------
+   BOTANICAL BIO-SENSOR POP-UP POD (ASYMMETRICAL ORGANIC SILHOUETTE)
+   -------------------------------------------------------------------------- */
+.marker-hud-popup-card {
+  position: absolute;
+  bottom: calc(100% + 20px);
+  left: 50%;
+  transform: translateX(-50%) translateY(12px) scale(0.94);
+  width: 330px;
+  /* Bentuk Organik Asimetris: Perpaduan lengkungan daun botani & presisi sensor sains */
+  border-radius: 28px 6px 28px 28px;
+  background: linear-gradient(140deg, rgba(16, 42, 22, 0.97) 0%, rgba(6, 18, 9, 0.99) 100%);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  border: 1.5px solid rgba(196, 242, 138, 0.5);
+  padding: 1.45rem 1.5rem;
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.88), 
+              0 0 35px rgba(196, 242, 138, 0.22),
+              inset 0 1px 2px rgba(255, 255, 255, 0.35);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 100;
+  overflow: hidden;
+}
+
+/* Organic Chlorophyll Canopy Ambient Glow */
+.marker-hud-popup-card::before {
+  content: '';
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  width: 140px;
+  height: 140px;
+  background: radial-gradient(circle, rgba(196, 242, 138, 0.3) 0%, rgba(104, 127, 57, 0.12) 50%, transparent 75%);
+  pointer-events: none;
+  border-radius: 50%;
+}
+
+/* Botanical Glowing Laser Stem Connector */
+.marker-hud-popup-card::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 20px;
+  background: linear-gradient(180deg, var(--accent-lime) 0%, rgba(196, 242, 138, 0) 100%);
+  box-shadow: 0 0 10px var(--accent-lime);
+}
+
+.floating-nature-marker:hover .marker-hud-popup-card {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0) scale(1);
+}
+
+.hud-popup-top-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.85rem;
+  position: relative;
+  z-index: 2;
+}
+
+.hud-live-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  color: var(--accent-lime);
+  letter-spacing: 0.06em;
+  background: rgba(196, 242, 138, 0.15);
+  border: 1px solid rgba(196, 242, 138, 0.3);
+  padding: 0.25rem 0.6rem;
+  border-radius: 4px;
+}
+
+.hud-live-badge .live-dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--accent-lime);
+  animation: pulseDot 1.5s infinite;
+}
+
+@keyframes pulseDot {
+  0%, 100% { opacity: 1; transform: scale(1); box-shadow: 0 0 8px var(--accent-lime); }
+  50% { opacity: 0.4; transform: scale(0.7); box-shadow: none; }
+}
+
+.hud-node-mono {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  color: var(--text-soft-grey);
+  position: relative;
+  z-index: 2;
+}
+
+.hud-popup-metric-row {
+  display: flex;
+  align-items: baseline;
+  gap: 0.65rem;
+  margin-bottom: 0.75rem;
+  position: relative;
+  z-index: 2;
+}
+
+.hud-big-num {
+  font-family: var(--font-display);
+  font-size: 2.1rem;
+  font-weight: 900;
+  color: #FFFFFF;
+  line-height: 1;
+}
+
+.hud-big-num small {
+  font-size: 1.05rem;
+  color: var(--accent-lime);
+  margin-left: 2px;
+}
+
+.hud-metric-label {
+  font-family: var(--font-display);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--text-warm-white);
+  line-height: 1.25;
+}
+
+.hud-mini-progress-bar {
+  width: 100%;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+  overflow: hidden;
+  margin-bottom: 0.85rem;
+  position: relative;
+  z-index: 2;
+}
+
+.hud-mini-progress-bar div {
+  height: 100%;
+  background: linear-gradient(90deg, #C4F28A 0%, #7E9E47 100%);
+  border-radius: 3px;
+  box-shadow: 0 0 10px rgba(196, 242, 138, 0.4);
+}
+
+.hud-popup-desc {
+  font-size: 0.8125rem;
+  color: var(--text-muted-white);
+  line-height: 1.45;
+  position: relative;
+  z-index: 2;
+}
+
+/* --------------------------------------------------------------------------
+   SECTION 3: SCIENTIFIC CREDIBILITY & ACCORDION (MATCHING SCREENSHOT 2)
+   -------------------------------------------------------------------------- */
+.alethia-credibility-section {
+  padding: 8rem 0;
+  position: relative;
+  background: transparent;
+  z-index: 10;
+}
+
+.credibility-asymmetric-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 4.5rem;
+  align-items: flex-start;
+  position: relative;
+  z-index: 5;
+}
+
+.credibility-left-h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.035em;
+  color: var(--text-pure-white);
+  margin-top: 0.5rem;
+  margin-bottom: 2.5rem;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.credibility-chart-card {
+  background: var(--glass-bar-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-bar-border);
+  border-radius: 16px;
+  padding: 1.5rem;
+  max-width: 380px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.credibility-chart-header {
+  display: flex;
+  justify-content: space-between;
+  color: var(--text-muted-white);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.credibility-chart-graph {
+  height: 60px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 0.25rem;
+}
+
+.credibility-chart-footer {
+  margin-top: 0.75rem;
+  color: var(--accent-lime);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+/* EXACT REFERENCE ACCORDION (SCREENSHOT 2) */
+.alethia-accordion-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.alethia-accordion-item {
+  background: rgba(18, 38, 22, 0.45);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-pill);
+  overflow: hidden;
+  transition: background 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              border-radius 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.alethia-accordion-header {
+  padding: 0.95rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-warm-white);
+  transition: color 0.3s ease;
+}
+
+.alethia-accordion-header .service-index-num {
+  color: var(--accent-lime);
+  margin-right: 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.accordion-symbol {
+  font-family: var(--font-mono);
+  font-size: 1.15rem;
+  font-weight: 700;
+  display: inline-block;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), color 0.3s ease;
+}
+
+.alethia-accordion-item.active {
+  background: var(--accent-lime);
+  border-color: var(--accent-lime);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(196, 242, 138, 0.25);
+}
+
+.alethia-accordion-item.active .alethia-accordion-header {
+  color: #07180C;
+}
+
+.alethia-accordion-item.active .alethia-accordion-header .service-index-num {
+  color: #07180C;
+}
+
+/* Butter-Smooth Dropdown Animation */
+.alethia-accordion-body {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  padding: 0 1.5rem;
+  color: #07180C;
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  line-height: 1.55;
+  transform: translateY(-4px);
+  transition: max-height 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+              opacity 0.35s ease,
+              padding 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.alethia-accordion-item.active .alethia-accordion-body {
+  max-height: 400px;
+  opacity: 1;
+  padding: 0.25rem 1.5rem 1.25rem;
+  transform: translateY(0);
+}
+
+.subservice-bullet-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem;
+  margin-top: 0.85rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid rgba(7, 24, 12, 0.2);
+}
+
+.subservice-bullet-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #07180C;
+}
+
+/* --------------------------------------------------------------------------
+   SECTION 4: CORE SOLUTIONS (MATCHING SCREENSHOT 5)
+   -------------------------------------------------------------------------- */
+.alethia-solutions-section {
+  padding: 8rem 0;
+  background: var(--color-stone-light);
+  color: var(--text-dark-stone);
+  position: relative;
+  z-index: 20;
+  box-shadow: 0 -20px 50px rgba(0, 0, 0, 0.4);
+}
+
+.solutions-headline-h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 4.5vw, 3.75rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+  color: var(--text-dark-stone);
+  margin-top: 1.25rem;
+  max-width: 22ch;
+}
+
+.solutions-3col-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 3.5rem;
+}
+
+.solution-photo-card {
+  height: 500px;
+  border-radius: var(--radius-card);
+  padding: 2.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+  background-image: linear-gradient(180deg, rgba(7, 24, 12, 0.25) 0%, rgba(7, 24, 12, 0.8) 100%),
+                    url('alethia_macro_landscape.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.15);
+  transition: transform var(--transition-smooth);
+}
+
+.solution-photo-card:hover {
+  transform: translateY(-6px);
+}
+
+.card-top-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  z-index: 2;
+}
+
+.card-tag-mono {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--accent-lime);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.card-arrow-circle {
+  width: 34px; height: 34px;
+  border-radius: 50%;
+  background: var(--accent-lime);
+  color: var(--color-deep-forest);
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 900;
+  transition: transform 0.2s ease;
+}
+
+.solution-photo-card:hover .card-arrow-circle {
+  transform: scale(1.1);
+}
+
+.card-bottom-h3 {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: #FFFFFF;
+  position: relative;
+  z-index: 2;
+}
+
+/* --------------------------------------------------------------------------
+   SECTION 5: BLACK TECHNOLOGY STATEMENT (EXACT MATCH SCREENSHOT 1)
+   -------------------------------------------------------------------------- */
+.alethia-statement-section {
+  padding: 10rem 0;
+  background: var(--color-black-pure);
+  text-align: center;
+  position: relative;
+  z-index: 20;
+}
+
+.statement-content-container {
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 5;
+}
+
+.statement-h2-large {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 5.5vw, 4.75rem);
+  font-weight: 800;
+  line-height: 1.04;
+  letter-spacing: -0.04em;
+  color: var(--text-pure-white);
+  margin-top: 1.5rem;
+  margin-bottom: 1.75rem;
+}
+
+.statement-desc-p {
+  font-size: 1.0625rem;
+  color: var(--text-muted-white);
+  line-height: 1.55;
+  max-width: 54ch;
+  margin: 0 auto 2.5rem;
+}
+
+.statement-down-btn {
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  border: 1px solid var(--accent-lime);
+  color: var(--accent-lime);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-smooth);
+}
+
+.statement-down-btn:hover {
+  background: var(--accent-lime);
+  color: var(--color-deep-forest);
+}
+
+
+
+.open-platforms-matrix {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2.5rem;
+  margin-top: 6rem;
+  text-align: left;
+  padding-top: 3rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.open-platform-col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.open-platform-col .col-tag {
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--accent-lime);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.open-platform-col .col-title {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--text-pure-white);
+}
+
+.open-platform-col .col-desc {
+  font-size: 0.875rem;
+  color: var(--text-soft-grey);
+  line-height: 1.6;
+}
+
+/* --------------------------------------------------------------------------
+   SECTION 6: CLIENT ADOPTIONS — ARCHITECTURAL EDITORIAL MATRIX
+   -------------------------------------------------------------------------- */
+.alethia-clients-roster-section {
+  padding: 8rem 0 8.5rem;
+  background: linear-gradient(180deg, rgba(7, 24, 12, 0.95) 0%, rgba(13, 30, 16, 0.98) 100%);
+  border-top: 1px solid rgba(196, 242, 138, 0.15);
+  border-bottom: 1px solid rgba(196, 242, 138, 0.15);
+  position: relative;
+  z-index: 20;
+}
+
+.clients-roster-header-row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 4rem;
+}
+
+.clients-verified-badge-mono {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--accent-lime);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.4rem 0.85rem;
+  border: 1px solid rgba(196, 242, 138, 0.3);
+  border-radius: 4px;
+}
+
+.architectural-client-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  border-left: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.architectural-client-cell {
+  padding: 2.25rem 2rem;
+  border-right: 1px solid rgba(255, 255, 255, 0.12);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 180px;
+  position: relative;
+  transition: background-color var(--transition-smooth);
+  cursor: default;
+}
+
+.architectural-client-cell:hover {
+  background: rgba(196, 242, 138, 0.04);
+}
+
+.client-cell-top-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.client-cell-index {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--accent-lime);
+}
+
+.client-cell-logo-glyph {
+  width: 32px; height: 32px;
+  color: var(--accent-lime);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform var(--transition-smooth);
+}
+
+.architectural-client-cell:hover .client-cell-logo-glyph {
+  transform: scale(1.15) rotate(4deg);
+}
+
+.client-cell-name {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--text-pure-white);
+  line-height: 1.25;
+  margin-top: 1.25rem;
+  margin-bottom: 0.5rem;
+  transition: color var(--transition-smooth);
+}
+
+.architectural-client-cell:hover .client-cell-name {
+  color: var(--accent-lime);
+}
+
+.client-cell-sector {
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-soft-grey);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* --------------------------------------------------------------------------
+   SECTION 7: GIANT DISPLAY TYPOGRAPHY FOOTER (PURE ARCHITECTURAL PRECISION)
+   -------------------------------------------------------------------------- */
+.alethia-giant-footer {
+  position: relative;
+  z-index: 20;
+  padding: 8rem 0 3.5rem;
+  text-align: center;
+  overflow: hidden;
+  background: var(--color-deep-forest);
+  border-top: 1px solid rgba(196, 242, 138, 0.15);
+}
+
+.footer-top-cta-block {
+  max-width: 820px;
+  margin: 0 auto 4.5rem;
+  position: relative;
+  z-index: 5;
+}
+
+.footer-cta-h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -0.035em;
+  color: var(--accent-lime);
+  margin-bottom: 1.25rem;
+}
+
+.footer-cta-p {
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  font-weight: 400;
+  color: var(--text-muted-white);
+  line-height: 1.5;
+  max-width: 50ch;
+  margin: 0 auto 2.25rem;
+}
+
+/* Exact Reference Button: [ LET'S TALK  > ] */
+.footer-cta-box-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.55rem 0.65rem 0.55rem 1.35rem;
+  background: var(--accent-lime);
+  border-radius: 6px;
+  color: var(--color-deep-forest);
+  font-family: var(--font-display);
+  font-size: 0.8125rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all var(--transition-smooth);
+}
+
+.footer-cta-box-button .btn-chevron-box {
+  width: 24px;
+  height: 24px;
+  background: var(--color-deep-forest);
+  color: var(--accent-lime);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 900;
+  transition: transform var(--transition-smooth);
+}
+
+.footer-cta-box-button:hover {
+  background: #FFFFFF;
+  color: var(--color-deep-forest);
+}
+
+.footer-cta-box-button:hover .btn-chevron-box {
+  transform: translateX(3px);
+}
+
+/* Giant Brand Typography (Full-Bleed Edge-to-Edge Responsive Fit) */
+.footer-giant-logo-row {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  margin-bottom: 3.5rem;
+  user-select: none;
+  overflow: visible;
+  text-align: center;
+  position: relative;
+  z-index: 5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem 1.5vw 1.25rem;
+}
+
+.footer-giant-logo-text {
+  font-family: var(--font-display);
+  font-size: clamp(2.75rem, 13.4vw, 20rem);
+  font-weight: 900;
+  line-height: 0.98;
+  letter-spacing: -0.045em;
+  color: var(--accent-lime);
+  display: inline-block;
+  text-transform: lowercase;
+  white-space: nowrap;
+  text-align: center;
+  width: 100%;
+  padding-bottom: 0.2em;
+}
+
+/* Bottom Navigation & Matrix */
+.footer-bottom-nav-grid {
+  display: grid;
+  grid-template-columns: 1.6fr repeat(4, 1fr);
+  gap: 3rem;
+  text-align: left;
+  padding-top: 3.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  margin-bottom: 4rem;
+  position: relative;
+  z-index: 5;
+}
+
+.footer-location-block {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--text-warm-white);
+  letter-spacing: -0.02em;
+}
+
+.footer-col-header-mono {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-soft-grey);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 1.25rem;
+}
+
+.footer-nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.footer-nav-link-a {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--accent-lime);
+  text-transform: uppercase;
+  transition: color var(--transition-smooth);
+}
+
+.footer-nav-link-a:hover {
+  color: #FFFFFF;
+}
+
+.footer-copyright-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-soft-grey);
+  position: relative;
+  z-index: 5;
+}
+
+.footer-back-to-top {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: var(--text-soft-grey);
+  transition: color var(--transition-smooth);
+  cursor: pointer;
+}
+
+.footer-back-to-top:hover {
+  color: var(--accent-lime);
+}
+
+/* Modal Window */
+.alethia-modal-dialog {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(7, 24, 12, 0.94);
+  z-index: 2500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+
+.alethia-modal-dialog.active { opacity: 1; pointer-events: auto; }
+
+.alethia-modal-card {
+  background: var(--color-dark-moss);
+  border: 1px solid var(--accent-lime);
+  border-radius: var(--radius-card);
+  padding: 2.5rem;
+  width: 100%;
+  max-width: 520px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8);
+  position: relative;
+  transform: translateY(20px);
+  transition: transform 0.25s ease;
+}
+
+.alethia-modal-dialog.active .alethia-modal-card { transform: translateY(0); }
+
+.modal-close-btn {
+  position: absolute;
+  top: 1.25rem; right: 1.25rem;
+  color: var(--text-soft-grey);
+  font-size: 1.5rem;
+}
+
+.modal-close-btn:hover { color: var(--accent-lime); }
+
+.form-group-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  margin-bottom: 1.25rem;
+  text-align: left;
+}
+
+.form-label-text {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-warm-white);
+}
+
+.form-input-field, .form-select-field {
+  background: var(--color-deep-forest);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  color: var(--text-warm-white);
+  transition: border-color 0.2s ease;
+}
+
+.form-input-field:focus, .form-select-field:focus {
+  border-color: var(--accent-lime);
+  outline: none;
+}
+
+/* Responsive */
+@media (max-width: 1100px) {
+  .solutions-3col-cards { grid-template-columns: 1fr; }
+  .open-platforms-matrix { grid-template-columns: repeat(2, 1fr); }
+  .architectural-client-grid { grid-template-columns: repeat(2, 1fr); }
+  .footer-bottom-nav-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 1024px) {
+  .menu-curtain-main-grid { grid-template-columns: 1fr; gap: 3rem; }
+  .curtain-right-info-box { display: none; }
+  .ecosystem-organic-header-grid { grid-template-columns: 1fr; }
+  .credibility-asymmetric-grid { grid-template-columns: 1fr; gap: 3rem; }
+}
+
+@media (max-width: 768px) {
+  .container { padding: 0 1.5rem; }
+  .nav-container-inner { padding: 0 1.5rem; }
+  .organic-floating-markers-field { min-height: 550px; }
+  .floating-nature-marker { position: static; margin-bottom: 2rem; }
+  .marker-hud-popup-card { position: static; transform: none; opacity: 1; pointer-events: auto; width: 100%; margin-top: 0.75rem; }
+  .marker-hud-popup-card::after { display: none; }
+  .subservice-bullet-grid { grid-template-columns: 1fr; }
+  .hero-footer-row { flex-direction: column; gap: 1.5rem; align-items: flex-start; }
+  .architectural-client-grid { grid-template-columns: 1fr; }
+  .footer-bottom-nav-grid { grid-template-columns: 1fr; }
+  .footer-copyright-bar { flex-direction: column; gap: 1rem; text-align: center; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ==========================================================================
+   KARYA-KONSEP — tambahan untuk konten v1 (2026-09-17)
+   ========================================================================== */
+.konsep-switch {
+  position: fixed; left: 1rem; bottom: 1rem; z-index: 9000;
+  font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.08em;
+  color: var(--color-deep-forest); background: var(--accent-lime);
+  padding: 0.45rem 0.8rem; border-radius: var(--radius-pill);
+  text-decoration: none; box-shadow: 0 6px 20px rgba(0,0,0,0.35);
+}
+.konsep-switch:hover { background: var(--accent-lime-hover); }
+
+.hero-badge-tag { display: inline-block; margin-bottom: 1.5rem; }
+.hero-secondary-cta { margin-left: 2rem; opacity: 0.75; }
+.hero-secondary-cta:hover { opacity: 1; }
+
+.credibility-left-p {
+  color: var(--text-soft-grey); font-size: 1.0625rem; line-height: 1.65;
+  max-width: 46ch; margin: 1.25rem 0 2rem;
+}
+.fact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem 1.25rem; margin: 0; padding: 1rem 0 0.25rem; }
+.fact-grid dt { font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent-moss); margin-bottom: 0.2rem; }
+.fact-grid dd { margin: 0; font-size: 0.9rem; color: var(--text-warm-white); line-height: 1.4; }
+
+.solutions-sub-p { color: rgba(18,24,19,0.7); font-size: 1.0625rem; max-width: 60ch; margin: 0.75rem 0 2.5rem; line-height: 1.65; }
+
+/* Katalog: daftar brand per kategori di matriks hitam */
+.catalog-brand-list { list-style: none; margin: 1rem 0 0; padding: 0; display: flex; flex-direction: column; gap: 0.6rem; }
+.catalog-brand-list a {
+  display: grid; grid-template-columns: 1fr; gap: 0.15rem;
+  padding: 0.85rem 1rem; border: 1px solid rgba(196,242,138,0.14); border-radius: var(--radius-sm);
+  text-decoration: none; color: var(--text-warm-white);
+  transition: border-color var(--transition-smooth), background var(--transition-smooth), transform var(--transition-smooth);
+}
+.catalog-brand-list a:hover { border-color: var(--accent-lime); background: rgba(196,242,138,0.06); transform: translateY(-2px); }
+.catalog-brand-list strong { font-family: var(--font-display); font-size: 1rem; font-weight: 700; color: #fff; }
+.catalog-brand-list span { font-size: 0.82rem; color: var(--text-muted-white); }
+.catalog-brand-list small { font-family: var(--font-mono); font-size: 0.62rem; color: var(--text-soft-grey); line-height: 1.5; margin-top: 0.2rem; }
+
+/* Klien: logo asli menggantikan glyph */
+.clients-roster-h2 { font-family: var(--font-display); font-size: clamp(2.25rem, 4vw, 3.25rem); font-weight: 800; margin-top: 0.75rem; }
+.clients-roster-p { color: var(--text-soft-grey); font-size: 1.0625rem; max-width: 55ch; margin-top: 0.35rem; }
+.client-cell-logo-img { width: 40px; height: 40px; border-radius: 8px; background: #fff; padding: 4px; overflow: hidden; }
+.client-cell-logo-img img { width: 100%; height: 100%; object-fit: contain; display: block; }
+.client-cell-solutions { display: block; font-family: var(--font-mono); font-size: 0.6rem; letter-spacing: 0.06em; color: var(--accent-moss); margin-top: 0.4rem; text-transform: uppercase; }
+
+/* Mitra / ekosistem brand */
+.alethia-partners-section {
+  padding: 7rem 0; position: relative; z-index: 20;
+  background: linear-gradient(180deg, rgba(9,25,13,0.97) 0%, rgba(7,24,12,0.99) 100%);
+  border-bottom: 1px solid rgba(196,242,138,0.15);
+}
+.partners-h2 { font-family: var(--font-display); font-size: clamp(2rem, 3.6vw, 3rem); font-weight: 800; margin-top: 0.75rem; }
+.partners-p { color: var(--text-soft-grey); font-size: 1.0625rem; max-width: 60ch; margin: 0.5rem 0 2.5rem; line-height: 1.65; }
+.partner-groups { display: flex; flex-direction: column; gap: 2rem; }
+.partner-group-label { font-family: var(--font-mono); font-size: 0.66rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent-lime); margin-bottom: 0.8rem; }
+.partner-tag-row { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.partner-tag {
+  font-family: var(--font-body); font-size: 0.82rem; color: var(--text-muted-white);
+  border: 1px solid rgba(255,255,255,0.14); border-radius: var(--radius-pill); padding: 0.35rem 0.85rem;
+  transition: border-color var(--transition-smooth), color var(--transition-smooth);
+}
+.partner-tag:hover { border-color: var(--accent-lime); color: #fff; }
+
+.footer-plain-link { color: inherit; text-decoration: none; }
+.footer-plain-link:hover { color: var(--accent-lime); }
+
+.modal-title { font-family: var(--font-display); font-size: 1.5rem; font-weight: 800; margin-bottom: 0.4rem; color: #fff; }
+.modal-sub { font-size: 0.875rem; color: var(--text-soft-grey); margin-bottom: 1.25rem; }
+.modal-direct-row {
+  display: flex; flex-wrap: wrap; gap: 1.5rem; margin-bottom: 1.5rem; padding: 0.85rem 1.15rem;
+  background: rgba(7,24,12,0.6); border: 1px solid rgba(196,242,138,0.25); border-radius: 8px;
+  font-family: var(--font-mono); font-size: 0.75rem;
+}
+.modal-direct-row a { color: var(--accent-lime); text-decoration: none; display: inline-flex; align-items: center; gap: 0.45rem; }
+
+@media (max-width: 768px) {
+  .hero-secondary-cta { margin-left: 0; display: inline-flex; margin-top: 1rem; }
+  .fact-grid { grid-template-columns: 1fr; }
+}

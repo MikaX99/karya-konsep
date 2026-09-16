@@ -1,0 +1,76 @@
+# Environment & Secrets
+.env
+.env*.local
+.env.production
+*.pem
+*.key
+
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+ENV/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Large Files & Data
+*.tar
+*.tar.gz
+*.zip
+*.raw
+*.img
+*.iso
+*.mov
+*.mp4
+
+# OS & IDE
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+.idea/
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+*.swp
+*.swo
+
+# AI Scratchpads & Temporary logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.claude/settings.local.json
+dist/
+.claude/settings.local.json

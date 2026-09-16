@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Karya Sistem — Konsep C · Haven</title>
+  <meta name="description" content="{{ company.description }}">
+  <meta name="robots" content="noindex">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="../shared/assets/reveal.css">
+</head>
+<body>
+
+  <a href="../" class="konsep-switch" aria-label="Kembali ke hub konsep">&larr; HUB KONSEP · C HAVEN</a>
+
+  <!-- HEADER -->
+  <header class="ks-main-header" id="mainHeader">
+    <div class="ks-header-row">
+      <a href="#hero" class="ks-logo-group" aria-label="Karya Sistem — Beranda">
+        <svg class="ks-logo-svg" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect y="0" width="12" height="12" fill="#0C388D"></rect>
+          <rect x="24" width="12" height="12" fill="#0C388D"></rect>
+          <path d="M24 12H11.65V24.35Z" fill="#0C388D"></path>
+          <path d="M0 24H12V12Z" fill="#0C388D"></path>
+          <path d="M24 24H36V12Z" fill="#0C388D"></path>
+          <rect y="23.65" width="12.35" height="12.35" fill="#0C388D"></rect>
+          <rect x="24" y="23.65" width="12" height="12.35" fill="#0C388D"></rect>
+        </svg>
+      </a>
+
+      <div class="ks-center-menu-trigger">
+        <button class="btn-ks-header-menu" id="btnMenuTrigger" aria-label="Buka menu">
+          <span>Menu</span>
+          <div class="menu-bars-glyph"><span></span><span></span></div>
+        </button>
+      </div>
+
+      <div class="ks-header-actions">
+        <a href="#consultationModal" class="ks-talk-link btn-open-modal" aria-label="Konsultasi">Konsultasi</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- MENU DRAWER -->
+  <div class="ks-menu-drawer" id="cinematicMenuCurtain" role="dialog" aria-modal="true" aria-label="Menu navigasi">
+    <div class="drawer-top-bar">
+      <div style="display:flex; align-items:center; gap:1rem;">
+        <svg class="ks-logo-svg" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect y="0" width="12" height="12" fill="#FFFFFF"></rect>
+          <rect x="24" width="12" height="12" fill="#FFFFFF"></rect>
+          <path d="M24 12H11.65V24.35Z" fill="#FFFFFF"></path>
+          <path d="M0 24H12V12Z" fill="#FFFFFF"></path>
+          <path d="M24 24H36V12Z" fill="#FFFFFF"></path>
+          <rect y="23.65" width="12.35" height="12.35" fill="#FFFFFF"></rect>
+          <rect x="24" y="23.65" width="12" height="12.35" fill="#FFFFFF"></rect>
+        </svg>
+        <span class="drawer-brand-text">karya sistem</span>
+      </div>
+
+      <button class="btn-drawer-close" id="btnCurtainClose" aria-label="Tutup menu">
+        <span>TUTUP</span>
+        <span style="font-size:1.25rem; line-height:1;">&times;</span>
+      </button>
+    </div>
+
+    <div class="drawer-links-grid">
+      <nav class="drawer-nav-list">
+        <a href="#hero" class="drawer-nav-link">Beranda</a>
+        <a href="#tentang" class="drawer-nav-link">Tentang</a>
+        <a href="#layanan" class="drawer-nav-link">Layanan</a>
+        <a href="#katalog" class="drawer-nav-link">Katalog</a>
+        <a href="#mitra" class="drawer-nav-link">Mitra</a>
+        <a href="#klien" class="drawer-nav-link">Klien</a>
+      </nav>
+
+      <div class="drawer-contact-col">
+        <p class="drawer-quote">“{{ about.tagline }}” — {{ company.description }}</p>
+
+        <div>
+          <span class="drawer-contact-label">KONTAK LANGSUNG</span>
+          <div class="drawer-contact-phone">{{ contact.phone }}</div>
+          <div class="drawer-contact-email">{{ contact.salesEmail }}</div>
+        </div>
+
+        <div>
+          <a href="{{ wa }}" target="_blank" rel="noopener noreferrer" class="drawer-cta-link">
+            <span>KONSULTASI VIA WHATSAPP &rarr;</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="drawer-bottom-row">
+      <span>&copy; 2026 {{ company.name }}</span>
+      <span>BERDIRI {{ company.founded }} — JAKARTA TIMUR, INDONESIA</span>
+    </div>
+  </div>
+
+  <main>
+    <!-- SECTION 1: HERO — kartu mengembang saat gulir -->
+    <section class="ks-hero-expand-track" id="hero">
+      <div class="hero-sticky-stage">
+        <div class="cardinal-tag cardinal-top"><span>BERDIRI {{ company.founded }}</span></div>
+        <div class="cardinal-word cardinal-left"><span>Solusi</span></div>
+        <div class="cardinal-word cardinal-right"><span>Integrasi</span></div>
+        <div class="cardinal-tag cardinal-bottom"><span>JAKARTA TIMUR, INDONESIA</span></div>
+
+        <div class="hero-expanding-card-frame" id="heroExpandingCard">
+          <img src="ks_hero_architecture.jpg" alt="Karya Sistem" class="hero-expanding-img" id="heroExpandingImg">
+          <div class="hero-card-brand-overlay" id="heroCardOverlay">
+            <span class="hero-overlay-brand">karya sistem</span>
+            <span class="hero-overlay-tag">{{ hero.badge }}</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: TENTANG -->
+    <section class="ks-section-intro" id="tentang">
+      <div class="l-grid">
+        <h2 class="ks-h2" data-reveal>Solusi &amp; Integrasi IT untuk Operasional Bisnis Anda</h2>
+        <div class="ks-divider"></div>
+
+        <div class="section-intro-grid">
+          <div class="intro-left-col">
+            <p class="dot-heading" data-reveal>
+              <span class="dot-circle"></span>
+              <span>Tentang Karya Sistem</span>
+            </p>
+            <ul class="intro-badge-list" data-reveal style="--reveal-delay:120ms">
+              <li>✓ {{ about.badges.0 }}</li>
+              <li>✓ {{ about.badges.1 }}</li>
+              <li>✓ {{ about.badges.2 }}</li>
+            </ul>
+          </div>
+
+          <div class="intro-right-col">
+            <p class="intro-lead-paragraph" data-reveal>{{ about.lead }}</p>
+
+            <div class="intro-pillars" data-reveal style="--reveal-delay:120ms">
+              <div><strong>{{ about.pillars.0.title }}</strong><p>{{ about.pillars.0.desc }}</p></div>
+              <div><strong>{{ about.pillars.1.title }}</strong><p>{{ about.pillars.1.desc }}</p></div>
+              <div><strong>{{ about.pillars.2.title }}</strong><p>{{ about.pillars.2.desc }}</p></div>
+            </div>
+
+            <div class="intro-image-embed" data-reveal="scale">
+              <img src="ks_project_collaboration.jpg" alt="Tim Karya Sistem" loading="lazy">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: KEUNGGULAN — 3 kartu foto -->
+    <section class="ks-card-projects-section" id="keunggulan">
+      <div class="l-grid">
+        <h2 class="ks-h2" data-reveal>Mengapa Memilih Karya Sistem</h2>
+        <div class="ks-divider"></div>
+
+        <div class="projects-header-grid">
+          <div>
+            <p class="dot-heading" data-reveal>
+              <span class="dot-circle"></span>
+              <span>{{ values.badge }}</span>
+            </p>
+          </div>
+
+          <div class="projects-header-right-box">
+            <p class="ks-body-p" data-reveal>{{ values.subtitle }}</p>
+            <ul class="trust-list" data-reveal style="--reveal-delay:100ms">
+              <li>{{ hero.trust.0 }}</li>
+              <li>{{ hero.trust.1 }}</li>
+              <li>{{ hero.trust.2 }}</li>
+            </ul>
+            <a href="#layanan" class="btn-ks-primary" data-reveal style="--reveal-delay:200ms">
+              <span>Lihat layanan</span>
+              <span>&rarr;</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="project-cards-stack">
+          <div class="project-card-single-center">
+            <div class="ks-project-card" data-accordion-target="0" data-reveal="scale">
+              <div class="card-text-header">
+                <h3 class="card-heading-title">{{ values.items.0.title }}</h3>
+                <span class="card-date-mono">01</span>
+              </div>
+              <div class="card-portrait-media">
+                <img src="ks_card_datacenter.jpg" alt="{{ values.items.0.tagline }}" loading="lazy">
+              </div>
+              <p class="card-tagline">{{ values.items.0.tagline }}</p>
+            </div>
+          </div>
+
+          <div class="project-card-2col-row">
+            <div class="ks-project-card" data-accordion-target="1" data-reveal="scale">
+              <div class="card-text-header">
+                <h3 class="card-heading-title">{{ values.items.1.title }}</h3>
+                <span class="card-date-mono">02</span>
+              </div>
+              <div class="card-portrait-media">
+                <img src="ks_card_obsidian.jpg" alt="{{ values.items.1.tagline }}" loading="lazy">
+              </div>
+              <p class="card-tagline">{{ values.items.1.tagline }}</p>
+            </div>
+
+            <div class="ks-project-card" data-accordion-target="3" data-reveal="scale" style="--reveal-delay:120ms">
+              <div class="card-text-header">
+                <h3 class="card-heading-title">{{ values.items.2.title }}</h3>
+                <span class="card-date-mono">03</span>
+              </div>
+              <div class="card-portrait-media">
+                <img src="ks_project_infrastructure.jpg" alt="{{ values.items.2.tagline }}" loading="lazy">
+              </div>
+              <p class="card-tagline">{{ values.items.2.tagline }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: LAYANAN — accordion -->
+    <section class="ks-expertise-section" id="layanan">
+      <div class="l-grid">
+        <div class="expertise-2col-layout">
+          <div>
+            <p class="dot-heading" style="margin-bottom:1rem;" data-reveal>
+              <span class="dot-circle"></span>
+              <span>{{ services.badge }}</span>
+            </p>
+            <h2 class="ks-h2 ks-h2-tight" data-reveal style="--reveal-delay:100ms">Solusi &amp; Layanan IT Terintegrasi</h2>
+            <p class="ks-body-p" data-reveal style="--reveal-delay:180ms">{{ services.subtitle }}</p>
+          </div>
+
+          <div>
+            <!-- @services -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: KATALOG PERANGKAT -->
+    <section class="ks-collaborators-block ks-catalog-section" id="katalog">
+      <div class="l-grid">
+        <h2 class="ks-h2" data-reveal>Perangkat &amp; Hardware Enterprise</h2>
+        <div class="ks-divider"></div>
+        <div class="projects-header-grid">
+          <div>
+            <p class="dot-heading" data-reveal>
+              <span class="dot-circle"></span>
+              <span>{{ catalog.badge }}</span>
+            </p>
+          </div>
+          <div class="projects-header-right-box">
+            <p class="ks-body-p" data-reveal>{{ catalog.subtitle }} Setiap lini dapat dikonfigurasi sesuai spesifikasi — klik kartu untuk minta penawaran via WhatsApp.</p>
+          </div>
+        </div>
+
+        <div class="ks-catalog-groups">
+          <!-- @catalog -->
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 6: MITRA / EKOSISTEM BRAND -->
+    <section class="ks-collaborators-block" id="mitra">
+      <div class="l-grid">
+        <div class="collab-block-grid">
+          <div class="collab-left-list-col">
+            <p class="dot-heading" style="margin-bottom:1.5rem;" data-reveal>
+              <span class="dot-circle"></span>
+              <span>{{ partners.badge }}</span>
+            </p>
+            <div class="ks-divider" style="margin-top:0; margin-bottom:1.5rem;"></div>
+            <h2 class="ks-h2 ks-h2-tight" data-reveal>Mitra Teknologi &amp; Principal</h2>
+            <p class="collab-lead-desc" data-reveal style="--reveal-delay:100ms">{{ partners.subtitle }}</p>
+          </div>
+
+          <div class="collab-right-media-col">
+            <div class="ks-collab-list">
+              <!-- @partners -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 7: KLIEN -->
+    <section class="ks-clients-roster-block" id="klien">
+      <div class="l-grid">
+        <div class="editorial-archive-grid">
+          <div class="editorial-archive-left-sticky">
+            <p class="dot-heading" data-reveal>
+              <span class="square-dot"></span>
+              <span>{{ clients.badge }}</span>
+            </p>
+            <h2 class="archive-lead-h2" data-reveal style="--reveal-delay:100ms">Dipercaya oleh Perusahaan Enterprise.</h2>
+            <p class="archive-lead-desc" data-reveal style="--reveal-delay:180ms">{{ clients.subtitle }}</p>
+            <div class="archive-metric-badge" data-reveal style="--reveal-delay:260ms">
+              <span>BERDIRI {{ company.founded }}</span>
+              <span>&bull;</span>
+              <span>14 KLIEN</span>
+              <span>&bull;</span>
+              <span>53 BRAND</span>
+            </div>
+          </div>
+
+          <div class="editorial-archive-right-stream">
+            <div class="archive-sector-group">
+              <div class="archive-sector-header" data-reveal>
+                <span class="archive-sector-title">Klien &amp; solusi terpasang</span>
+                <span class="archive-sector-count">14 klien</span>
+              </div>
+              <!-- @clients -->
+            </div>
+
+            <div class="ks-testimonial-list">
+              <!-- @testimonials -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="ks-block-footer" id="kontak">
+    <div class="footer-simple-top-row">
+      <div class="footer-contact-block">
+        <div class="footer-contact-name">{{ company.name }}</div>
+        <div class="footer-contact-line">{{ company.address }}</div>
+        <div class="footer-contact-line"><a href="tel:+6287881200477">{{ contact.phone }}</a> &middot; <a href="mailto:{{ contact.salesEmail }}">{{ contact.salesEmail }}</a> &middot; <a href="mailto:{{ contact.infoEmail }}">{{ contact.infoEmail }}</a></div>
+        <div class="footer-contact-line">{{ contact.hours }}</div>
+      </div>
+      <div class="footer-social-links-row">
+        <a href="{{ wa }}" target="_blank" rel="noopener noreferrer" class="footer-social-link"><span>WhatsApp</span><span class="diagonal-arrow">&#8599;</span></a>
+        <a href="{{ social.linkedin }}" target="_blank" rel="noopener noreferrer" class="footer-social-link"><span>LinkedIn</span><span class="diagonal-arrow">&#8599;</span></a>
+        <a href="{{ social.instagram }}" target="_blank" rel="noopener noreferrer" class="footer-social-link"><span>Instagram</span><span class="diagonal-arrow">&#8599;</span></a>
+        <a href="{{ social.facebook }}" target="_blank" rel="noopener noreferrer" class="footer-social-link"><span>Facebook</span><span class="diagonal-arrow">&#8599;</span></a>
+        <a href="{{ maps.googleMapsUrl }}" target="_blank" rel="noopener noreferrer" class="footer-social-link"><span>Google Maps</span><span class="diagonal-arrow">&#8599;</span></a>
+      </div>
+    </div>
+
+    <div class="footer-giant-wordmark-row">
+      <span class="footer-giant-logo-text" id="footerGiantText">karya sistem</span>
+    </div>
+
+    <div class="ks-footer-bottom-bar">
+      <span>&copy; 2026 {{ company.name }} — {{ footer.rights }}</span>
+      <span>{{ footer.tagline }}</span>
+    </div>
+  </footer>
+
+  <!-- MODAL KONSULTASI -->
+  <div class="ks-modal-backdrop" id="consultationModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="ks-modal-box">
+      <button class="modal-close-btn" aria-label="Tutup">&times;</button>
+      <h3 id="modalTitle" class="modal-title">Konsultasi Kebutuhan IT</h3>
+      <p class="modal-sub">Isi singkat, kami lanjutkan lewat WhatsApp ke tim sales Karya Sistem.</p>
+
+      <div class="modal-direct-channels">
+        <a href="mailto:{{ contact.salesEmail }}" class="modal-channel-chip" aria-label="Email sales">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+          <span>{{ contact.salesEmail }}</span>
+        </a>
+        <a href="{{ wa }}" target="_blank" rel="noopener noreferrer" class="modal-channel-chip whatsapp" aria-label="Chat WhatsApp">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+          <span>{{ whatsapp.displayNumber }} &rarr;</span>
+        </a>
+      </div>
+
+      <form id="consultationForm">
+        <div class="form-group-block">
+          <label class="form-label-text" for="fullName">Nama</label>
+          <input type="text" id="fullName" class="form-input-field" placeholder="Nama Anda" required>
+        </div>
+        <div class="form-group-block">
+          <label class="form-label-text" for="companyName">Perusahaan / Instansi</label>
+          <input type="text" id="companyName" class="form-input-field" placeholder="PT …" required>
+        </div>
+        <div class="form-group-block">
+          <label class="form-label-text" for="workEmail">Email Kantor</label>
+          <input type="email" id="workEmail" class="form-input-field" placeholder="nama@perusahaan.com" required>
+        </div>
+        <div class="form-group-block">
+          <label class="form-label-text" for="servicePillar">Kebutuhan Utama</label>
+          <select id="servicePillar" class="form-select-field" required>
+            <option value="">Pilih layanan / pengadaan…</option>
+            <!-- @service_options -->
+          </select>
+        </div>
+        <button type="submit" class="form-submit-btn">
+          <span>LANJUT KE WHATSAPP &rarr;</span>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script src="../shared/assets/reveal.js"></script>
+</body>
+</html>

@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="{{ company.description }}">
+  <title>Karya Sistem — Konsep B · Forest</title>
+  <meta name="robots" content="noindex">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="../shared/assets/reveal.css">
+</head>
+<body>
+
+  <a href="../" class="konsep-switch" aria-label="Kembali ke hub konsep">&larr; HUB KONSEP · B FOREST</a>
+
+  <!-- 0. FIXED CINEMATIC NATURE STAGE -->
+  <div class="fixed-cinematic-stage" aria-hidden="true"></div>
+  <canvas class="wind-spores-canvas" id="windCanvas" aria-hidden="true"></canvas>
+
+  <!-- 1. NAVBAR -->
+  <header class="clean-editorial-nav">
+    <div class="nav-container-inner">
+      <a href="#hero" class="nav-clean-brand" aria-label="Karya Sistem — Beranda">
+        <div class="brand-clean-emblem">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="20" height="20">
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+          </svg>
+        </div>
+        <span class="brand-clean-title">{{ company.brandName }}</span>
+      </a>
+
+      <div class="nav-clean-right">
+        <button class="btn-clean-menu" id="btnMenuTrigger" aria-label="Buka menu navigasi">
+          <span>MENU</span>
+          <span class="menu-glyph">&equiv;</span>
+        </button>
+
+        <a href="#consultationModal" class="kinetic-text-cta btn-open-modal">
+          <span>KONSULTASI</span>
+          <span class="kinetic-arrow">&rarr;</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- 2. MENU CURTAIN -->
+  <div class="cinematic-menu-curtain" id="cinematicMenuCurtain" role="dialog" aria-modal="true" aria-label="Menu navigasi">
+    <div class="menu-curtain-top-bar">
+      <div class="nav-clean-brand">
+        <div class="brand-clean-emblem">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="20" height="20">
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+          </svg>
+        </div>
+        <span class="brand-clean-title">{{ company.name }}</span>
+      </div>
+
+      <button class="btn-curtain-close" id="btnCurtainClose" aria-label="Tutup menu">
+        <span>TUTUP</span>
+        <span style="font-size:1.1rem; line-height:1;">&times;</span>
+      </button>
+    </div>
+
+    <div class="menu-curtain-main-grid">
+      <nav class="curtain-links-list" aria-label="Navigasi utama">
+        <a href="#tentang" class="curtain-nav-link"><span class="nav-number-mono">01</span><span>TENTANG</span></a>
+        <a href="#layanan" class="curtain-nav-link"><span class="nav-number-mono">02</span><span>LAYANAN</span></a>
+        <a href="#katalog" class="curtain-nav-link"><span class="nav-number-mono">03</span><span>KATALOG</span></a>
+        <a href="#klien" class="curtain-nav-link"><span class="nav-number-mono">04</span><span>KLIEN</span></a>
+        <a href="#mitra" class="curtain-nav-link"><span class="nav-number-mono">05</span><span>MITRA</span></a>
+        <a href="#kontak" class="curtain-nav-link"><span class="nav-number-mono">06</span><span>KONTAK</span></a>
+      </nav>
+
+      <div class="curtain-right-editorial-column">
+        <div class="curtain-editorial-block">
+          <p class="curtain-editorial-quote">{{ company.tagline }}.</p>
+          <p class="curtain-editorial-sub">{{ hero.desc }}</p>
+        </div>
+
+        <div class="curtain-editorial-block">
+          <span class="curtain-meta-label">KANTOR</span>
+          <div class="curtain-editorial-location">Cakung, Jakarta Timur</div>
+        </div>
+
+        <div class="curtain-editorial-block" style="padding-top:0.5rem;">
+          <a href="{{ wa }}" target="_blank" rel="noopener noreferrer" class="kinetic-text-cta" style="font-size:1.05rem;">
+            <span>KONSULTASI VIA WHATSAPP</span>
+            <span class="kinetic-arrow">&rarr;</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="menu-curtain-bottom-bar">
+      <span>&copy; 2026 {{ company.name }}</span>
+      <span>TEKAN ESC UNTUK MENUTUP</span>
+    </div>
+  </div>
+
+  <main>
+    <!-- SECTION 1: HERO -->
+    <section class="alethia-hero-viewport" id="hero">
+      <div class="container hero-center-content-box">
+        <span class="reference-lime-tag hero-badge-tag" data-reveal>{{ hero.badge }}</span>
+        <h1 class="hero-editorial-headline" data-reveal style="--reveal-delay:120ms">
+          Solusi &amp; Integrasi IT<br>
+          untuk Operasional<br>
+          Bisnis Anda
+        </h1>
+
+        <div data-reveal style="--reveal-delay:260ms">
+          <a href="#consultationModal" class="kinetic-text-cta btn-open-modal" style="font-size:1.15rem;">
+            <span>{{ hero.ctaPrimary }}</span>
+            <span class="kinetic-arrow">&rarr;</span>
+          </a>
+          <a href="#layanan" class="kinetic-text-cta hero-secondary-cta" style="font-size:1.15rem;">
+            <span>{{ hero.ctaSecondary }}</span>
+            <span class="kinetic-arrow">&darr;</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="container hero-footer-row">
+        <p class="hero-footer-copy-text" data-reveal style="--reveal-delay:400ms">
+          “{{ company.tagline }}.”<br>
+          {{ company.description }}
+        </p>
+
+        <a href="#tentang" class="hero-scroll-indicator">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"></line><polyline points="19 12 12 19 5 12"></polyline></svg>
+          <span>GULIR UNTUK MENJELAJAH</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- SECTION 2: TENTANG — 3 PILAR + JAMINAN (marker interaktif) -->
+    <section class="alethia-ecosystem-section-organic" id="tentang">
+      <div class="container">
+        <div class="ecosystem-organic-header-grid">
+          <div class="ecosystem-organic-left-tag" data-reveal>
+            SYSTEM INTEGRATOR<br>
+            &amp; IT SOLUTION<br>
+            PROVIDER
+          </div>
+
+          <h2 class="ecosystem-organic-right-h2" data-reveal style="--reveal-delay:120ms">
+            {{ about.lead }}
+          </h2>
+        </div>
+
+        <div class="organic-floating-markers-field">
+          <!-- Marker 1 -->
+          <div class="floating-nature-marker marker-pos-1" data-reveal>
+            <div class="marker-lime-dot-cluster" aria-label="{{ about.pillars.0.title }}">&#8757;</div>
+            <div class="marker-floating-text-block">
+              <span class="marker-floating-title">PILAR 01</span>
+              <span class="marker-floating-stat">{{ about.pillars.0.title }}</span>
+            </div>
+            <div class="marker-hud-popup-card">
+              <div class="hud-popup-top-row">
+                <span class="hud-live-badge"><span class="live-dot"></span> {{ about.badges.0 }}</span>
+                <span class="hud-node-mono">PILAR // 01</span>
+              </div>
+              <p class="hud-popup-desc">{{ about.pillars.0.desc }}</p>
+            </div>
+          </div>
+
+          <!-- Marker 2 -->
+          <div class="floating-nature-marker marker-pos-2" data-reveal style="--reveal-delay:100ms">
+            <div class="marker-lime-dot-cluster" aria-label="{{ about.pillars.1.title }}">&#8757;</div>
+            <div class="marker-floating-text-block">
+              <span class="marker-floating-title">PILAR 02</span>
+              <span class="marker-floating-stat">{{ about.pillars.1.title }}</span>
+            </div>
+            <div class="marker-hud-popup-card">
+              <div class="hud-popup-top-row">
+                <span class="hud-live-badge"><span class="live-dot"></span> {{ about.badges.1 }}</span>
+                <span class="hud-node-mono">PILAR // 02</span>
+              </div>
+              <p class="hud-popup-desc">{{ about.pillars.1.desc }}</p>
+            </div>
+          </div>
+
+          <!-- Marker 3 -->
+          <div class="floating-nature-marker marker-pos-3" data-reveal style="--reveal-delay:200ms">
+            <div class="marker-lime-dot-cluster" aria-label="{{ about.pillars.2.title }}">&#8757;</div>
+            <div class="marker-floating-text-block">
+              <span class="marker-floating-title">PILAR 03</span>
+              <span class="marker-floating-stat">{{ about.pillars.2.title }}</span>
+            </div>
+            <div class="marker-hud-popup-card">
+              <div class="hud-popup-top-row">
+                <span class="hud-live-badge"><span class="live-dot"></span> {{ about.badges.2 }}</span>
+                <span class="hud-node-mono">PILAR // 03</span>
+              </div>
+              <p class="hud-popup-desc">{{ about.pillars.2.desc }}</p>
+            </div>
+          </div>
+
+          <!-- Marker 4: jaminan -->
+          <div class="floating-nature-marker marker-pos-4" data-reveal style="--reveal-delay:300ms">
+            <div class="marker-lime-dot-cluster" aria-label="Jaminan layanan">&#8757;</div>
+            <div class="marker-floating-text-block">
+              <span class="marker-floating-title">JAMINAN</span>
+              <span class="marker-floating-stat">Garansi Resmi &amp; Purna Jual</span>
+            </div>
+            <div class="marker-hud-popup-card">
+              <div class="hud-popup-top-row">
+                <span class="hud-live-badge"><span class="live-dot"></span> KOMITMEN</span>
+                <span class="hud-node-mono">SLA // SUPPORT</span>
+              </div>
+              <p class="hud-popup-desc">{{ hero.trust.0 }}. {{ hero.trust.1 }}. {{ hero.trust.2 }}.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: LAYANAN (accordion 4 pilar) -->
+    <section class="alethia-credibility-section" id="layanan">
+      <div class="container credibility-asymmetric-grid">
+        <div>
+          <span class="reference-lime-tag" data-reveal>{{ services.badge }}</span>
+          <h2 class="credibility-left-h2" data-reveal style="--reveal-delay:100ms">
+            Solusi &amp; Layanan<br>
+            IT Terintegrasi
+          </h2>
+          <p class="credibility-left-p" data-reveal style="--reveal-delay:180ms">{{ services.subtitle }}</p>
+
+          <div class="credibility-chart-card" data-reveal style="--reveal-delay:260ms">
+            <div class="credibility-chart-header">
+              <span>PROFIL // {{ company.brandName }}</span>
+              <span>FAKTA</span>
+            </div>
+            <dl class="fact-grid">
+              <div><dt>Badan usaha</dt><dd>{{ company.legalName }}</dd></div>
+              <div><dt>Berdiri</dt><dd>{{ company.founded }}</dd></div>
+              <div><dt>Kantor</dt><dd>Cakung, Jakarta Timur</dd></div>
+              <div><dt>Jam operasional</dt><dd>{{ company.hours }}</dd></div>
+            </dl>
+          </div>
+        </div>
+
+        <div class="alethia-accordion-list">
+          <!-- @accordion -->
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: KEUNGGULAN (3 kartu terang) -->
+    <section class="alethia-solutions-section" id="keunggulan">
+      <div class="container">
+        <span class="reference-lime-tag" data-reveal>{{ values.badge }}</span>
+        <h2 class="solutions-headline-h2" data-reveal style="--reveal-delay:100ms">
+          Mengapa Memilih Karya Sistem
+        </h2>
+        <p class="solutions-sub-p" data-reveal style="--reveal-delay:160ms">{{ values.subtitle }}</p>
+
+        <div class="solutions-3col-cards">
+          <div class="solution-photo-card" data-accordion-target="0" data-reveal>
+            <div class="card-top-header-row">
+              <span class="card-tag-mono">[{{ values.items.0.title }}]</span>
+              <div class="card-arrow-circle">&rarr;</div>
+            </div>
+            <h3 class="card-bottom-h3">{{ values.items.0.tagline }}</h3>
+          </div>
+
+          <div class="solution-photo-card" data-accordion-target="1" data-reveal style="--reveal-delay:120ms">
+            <div class="card-top-header-row">
+              <span class="card-tag-mono">[{{ values.items.1.title }}]</span>
+              <div class="card-arrow-circle">&rarr;</div>
+            </div>
+            <h3 class="card-bottom-h3">{{ values.items.1.tagline }}</h3>
+          </div>
+
+          <div class="solution-photo-card" data-accordion-target="3" data-reveal style="--reveal-delay:240ms">
+            <div class="card-top-header-row">
+              <span class="card-tag-mono">[{{ values.items.2.title }}]</span>
+              <div class="card-arrow-circle">&rarr;</div>
+            </div>
+            <h3 class="card-bottom-h3">{{ values.items.2.tagline }}</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: KATALOG (hitam) -->
+    <section class="alethia-statement-section" id="katalog">
+      <div class="container statement-content-container">
+        <span class="reference-lime-tag" data-reveal>{{ catalog.badge }}</span>
+        <h2 class="statement-h2-large" data-reveal style="--reveal-delay:100ms">
+          Perangkat &amp; Hardware<br>
+          Enterprise.
+        </h2>
+        <p class="statement-desc-p" data-reveal style="--reveal-delay:180ms">
+          {{ catalog.subtitle }} Setiap item dapat dikonfigurasi sesuai spesifikasi — klik untuk minta penawaran via WhatsApp.
+        </p>
+        <a href="#klien" class="statement-down-btn" aria-label="Gulir ke klien">
+          <span class="btn-arrow-down">&darr;</span>
+        </a>
+      </div>
+
+      <div class="container open-platforms-matrix">
+        <!-- @catalog -->
+      </div>
+    </section>
+
+    <!-- SECTION 6: KLIEN -->
+    <section class="alethia-clients-roster-section" id="klien">
+      <div class="container">
+        <div class="clients-roster-header-row">
+          <div>
+            <span class="reference-lime-tag" data-reveal>{{ clients.badge }}</span>
+            <h2 class="clients-roster-h2" data-reveal style="--reveal-delay:100ms">
+              Dipercaya oleh Perusahaan Enterprise
+            </h2>
+            <p class="clients-roster-p" data-reveal style="--reveal-delay:160ms">{{ clients.subtitle }}</p>
+          </div>
+          <span class="clients-verified-badge-mono" data-reveal>14 KLIEN · BERBAGAI SEKTOR</span>
+        </div>
+
+        <div class="architectural-client-grid">
+          <!-- @clients -->
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 6b: MITRA / EKOSISTEM BRAND -->
+    <section class="alethia-partners-section" id="mitra">
+      <div class="container">
+        <span class="reference-lime-tag" data-reveal>{{ partners.badge }}</span>
+        <h2 class="partners-h2" data-reveal style="--reveal-delay:100ms">Mitra Teknologi &amp; Principal</h2>
+        <p class="partners-p" data-reveal style="--reveal-delay:160ms">{{ partners.subtitle }}</p>
+        <div class="partner-groups">
+          <!-- @partners -->
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 7: FOOTER RAKSASA + KONTAK -->
+    <footer class="alethia-giant-footer" id="kontak">
+      <div class="container">
+        <div class="footer-top-cta-block" data-reveal>
+          <span class="reference-lime-tag">{{ contact.hours }}</span>
+          <h2 class="footer-cta-h2">
+            Mitra Solusi IT Terpercaya untuk Skalabilitas Bisnis Anda
+          </h2>
+          <p class="footer-cta-p">
+            {{ company.address }}
+          </p>
+          <a href="{{ wa }}" target="_blank" rel="noopener noreferrer" class="footer-cta-box-button">
+            <span>KONSULTASI VIA WHATSAPP</span>
+            <span class="btn-chevron-box">&gt;</span>
+          </a>
+        </div>
+
+        <div class="footer-giant-logo-row">
+          <span class="footer-giant-logo-text" id="footerGiantText">karya sistem</span>
+        </div>
+
+        <div class="footer-bottom-nav-grid">
+          <div class="footer-location-block">
+            {{ company.name }}<br>
+            Cakung, Jakarta Timur<br>
+            <a href="tel:+6287881200477" class="footer-plain-link">{{ contact.phone }}</a><br>
+            <a href="mailto:{{ contact.salesEmail }}" class="footer-plain-link">{{ contact.salesEmail }}</a><br>
+            <a href="mailto:{{ contact.infoEmail }}" class="footer-plain-link">{{ contact.infoEmail }}</a>
+          </div>
+
+          <div>
+            <div class="footer-col-header-mono">PERUSAHAAN</div>
+            <div class="footer-nav-list">
+              <a href="#tentang" class="footer-nav-link-a">TENTANG</a>
+              <a href="#keunggulan" class="footer-nav-link-a">KEUNGGULAN</a>
+              <a href="{{ maps.googleMapsUrl }}" target="_blank" rel="noopener noreferrer" class="footer-nav-link-a">GOOGLE MAPS</a>
+            </div>
+          </div>
+
+          <div>
+            <div class="footer-col-header-mono">LAYANAN</div>
+            <div class="footer-nav-list">
+              <a href="#layanan" class="footer-nav-link-a" data-accordion-target="0">INFRASTRUKTUR &amp; PENGADAAN</a>
+              <a href="#layanan" class="footer-nav-link-a" data-accordion-target="1">APLIKASI BISNIS</a>
+              <a href="#layanan" class="footer-nav-link-a" data-accordion-target="2">CYBERSECURITY</a>
+              <a href="#layanan" class="footer-nav-link-a" data-accordion-target="3">MANAGED IT</a>
+            </div>
+          </div>
+
+          <div>
+            <div class="footer-col-header-mono">KATALOG</div>
+            <div class="footer-nav-list">
+              <a href="#katalog" class="footer-nav-link-a">SERVER &amp; STORAGE</a>
+              <a href="#katalog" class="footer-nav-link-a">NETWORKING</a>
+              <a href="#katalog" class="footer-nav-link-a">LAPTOP &amp; PC</a>
+              <a href="#katalog" class="footer-nav-link-a">LISENSI SOFTWARE</a>
+            </div>
+          </div>
+
+          <div>
+            <div class="footer-col-header-mono">SOSIAL</div>
+            <div class="footer-nav-list">
+              <a href="{{ social.linkedin }}" target="_blank" rel="noopener noreferrer" class="footer-nav-link-a">LINKEDIN</a>
+              <a href="{{ social.instagram }}" target="_blank" rel="noopener noreferrer" class="footer-nav-link-a">INSTAGRAM</a>
+              <a href="{{ social.facebook }}" target="_blank" rel="noopener noreferrer" class="footer-nav-link-a">FACEBOOK</a>
+              <a href="{{ social.tiktok }}" target="_blank" rel="noopener noreferrer" class="footer-nav-link-a">TIKTOK</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-copyright-bar">
+          <span>&copy; 2026 {{ company.name }} — {{ footer.rights }}</span>
+          <span>{{ footer.tagline }}</span>
+          <a href="#hero" class="footer-back-to-top">Kembali ke atas &uarr;</a>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <!-- MODAL KONSULTASI -->
+  <div class="alethia-modal-dialog" id="consultationModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="alethia-modal-card">
+      <button class="modal-close-btn" aria-label="Tutup">&times;</button>
+      <h3 id="modalTitle" class="modal-title">Konsultasi Kebutuhan IT</h3>
+      <p class="modal-sub">Isi singkat, kami lanjutkan lewat WhatsApp ke tim sales Karya Sistem.</p>
+
+      <div class="modal-direct-row">
+        <a href="mailto:{{ contact.salesEmail }}"><span>✉ {{ contact.salesEmail }}</span></a>
+        <a href="{{ wa }}" target="_blank" rel="noopener noreferrer"><span>💬 {{ whatsapp.displayNumber }} &rarr;</span></a>
+      </div>
+
+      <form id="consultationForm">
+        <div class="form-group-block">
+          <label class="form-label-text" for="fullName">Nama</label>
+          <input type="text" id="fullName" class="form-input-field" placeholder="Nama Anda" required>
+        </div>
+        <div class="form-group-block">
+          <label class="form-label-text" for="companyName">Perusahaan / Instansi</label>
+          <input type="text" id="companyName" class="form-input-field" placeholder="PT …" required>
+        </div>
+        <div class="form-group-block">
+          <label class="form-label-text" for="workEmail">Email Kantor</label>
+          <input type="email" id="workEmail" class="form-input-field" placeholder="nama@perusahaan.com" required>
+        </div>
+        <div class="form-group-block">
+          <label class="form-label-text" for="servicePillar">Kebutuhan Utama</label>
+          <select id="servicePillar" class="form-select-field" required>
+            <option value="">Pilih layanan / pengadaan…</option>
+            <!-- @service_options -->
+          </select>
+        </div>
+        <button type="submit" class="reference-cta-button" style="margin-top:1rem;">
+          <span>LANJUT KE WHATSAPP</span>
+          <span style="font-size:1.1rem; line-height:1;">&rarr;</span>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script src="../shared/assets/reveal.js"></script>
+</body>
+</html>
