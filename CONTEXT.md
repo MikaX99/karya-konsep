@@ -13,6 +13,7 @@
   2. Konten "Mengapa Memilih" & angka klaim (dari penilaian v1 6,5/10) — masih memakai 3 pilar v1 tanpa angka.
 - **Pending (urut prioritas):** lihat fokus aktif. Setelah pemenang dipilih Mika: EN + porting ke proyek produksi.
 - **Riwayat singkat:**
+  - 2026-09-17 [SELESAI] Logo Konsep B Forest: ganti emblem generik di navbar & drawer dengan logo resmi Karya Sistem (`kst-light.png` / `kst-dark.png`) dengan auto-contrast adaptif.
   - 2026-09-17 [SELESAI] Fix hero Haven (`9acc9a1`): hilangkan blocker IntersectionObserver & delay birth kelamaan yang bikin canvas sempat kosong hitam; graf saraf 3D Obsidian langsung tampil mekar (spring bloom) 110 nodes + debu bintang + pulsa sinapsis aktif sejak frame 0.
   - 2026-09-17 [SELESAI] Update visual Haven (`59117c5`): Tim IT & Engineer dengan logo resmi Karya Sistem presisi HANYA di dada kiri seragam kerja.
   - 2026-09-17 [SELESAI] Ganti foto placeholder Haven Concept C dengan kurasi enterprise HD (Data Center Tier-3, Switch Optical, Network Engineer, Tim IT).
