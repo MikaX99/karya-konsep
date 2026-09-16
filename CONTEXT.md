@@ -7,13 +7,13 @@
 
 ## Active Checkpoint
 - **Status:** Hub A/B/C **LIVE di GitHub Pages** (`https://mikax99.github.io/karya-konsep/`, commit `73555de`, 2026-09-17). Actions build & deploy sukses. Hub statis A/B/C, Konsep B Forest (`/b-forest/`), dan C Haven (`/c-haven/`) aktif.
-- **Fokus aktif:** (1) Mika review perbandingan A vs B vs C di HP & desktop; (2) ganti foto placeholder B/C (menunggu izin unduh / foto Mika); (3) Mika pilih konsep pemenang.
+- **Fokus aktif:** (1) Mika review perbandingan A vs B vs C di HP & desktop; (2) ganti foto placeholder B Forest bila diperlukan; (3) Mika pilih konsep pemenang.
 - **Menunggu keputusan Mika:**
-  1. Izin unduh foto pengganti (Unsplash) untuk Haven (dan Forest bila fotonya juga salinan situs referensi) — atau Mika sediakan foto sendiri.
-  2. "Klien sejak 2020–2023" di v1 bertentangan dengan tahun berdiri 2024 → sementara tidak ditampilkan.
-  3. Konten "Mengapa Memilih" & angka klaim (dari penilaian v1 6,5/10) — masih memakai 3 pilar v1 tanpa angka.
+  1. "Klien sejak 2020–2023" di v1 bertentangan dengan tahun berdiri 2024 → sementara tidak ditampilkan.
+  2. Konten "Mengapa Memilih" & angka klaim (dari penilaian v1 6,5/10) — masih memakai 3 pilar v1 tanpa angka.
 - **Pending (urut prioritas):** lihat fokus aktif. Setelah pemenang dipilih Mika: EN + porting ke proyek produksi.
 - **Riwayat singkat:**
+  - 2026-09-17 [SELESAI] Ganti 5 foto placeholder Haven Concept C dengan kurasi foto enterprise HD (Arsitektur Swiss, Tim IT Indonesia, Data Center Tier-3, Switch Optical, Network Engineer).
   - 2026-09-17 [SELESAI] Optimasi perf Konsep B Forest (`e5e73df`): matikan canvas & parallax di touch/mobile, hapus shadowBlur boros GPU, throttle scroll navbar, hapus @import font CSS.
   - 2026-09-17 [SELESAI] GitHub Pages LIVE di `https://mikax99.github.io/karya-konsep/` via GitHub Actions (`73555de`).
   - 2026-09-17 [SELESAI] Push repo ke GitHub `MikaX99/karya-konsep` (branch `main`).
