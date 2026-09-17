@@ -265,8 +265,46 @@ def main():
         print(f"✓ {folder} → {out.relative_to(ROOT)}")
 
     (DIST / ".nojekyll").write_text("")
+
+    # SEO: robots.txt
+    (DIST / "robots.txt").write_text(
+        "User-agent: *\n"
+        "Allow: /\n\n"
+        "Sitemap: https://mikax99.github.io/karya-konsep/sitemap.xml\n"
+    )
+
+    # SEO: sitemap.xml
+    (DIST / "sitemap.xml").write_text(
+        '<?xml version="1.0" encoding="UTF-8"?>\n'
+        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+        '  <url>\n'
+        '    <loc>https://mikax99.github.io/karya-konsep/</loc>\n'
+        '    <lastmod>2026-09-17</lastmod>\n'
+        '    <changefreq>weekly</changefreq>\n'
+        '    <priority>1.0</priority>\n'
+        '  </url>\n'
+        '  <url>\n'
+        '    <loc>https://mikax99.github.io/karya-konsep/b-forest/</loc>\n'
+        '    <lastmod>2026-09-17</lastmod>\n'
+        '    <changefreq>weekly</changefreq>\n'
+        '    <priority>0.9</priority>\n'
+        '  </url>\n'
+        '  <url>\n'
+        '    <loc>https://mikax99.github.io/karya-konsep/c-haven/</loc>\n'
+        '    <lastmod>2026-09-17</lastmod>\n'
+        '    <changefreq>weekly</changefreq>\n'
+        '    <priority>0.9</priority>\n'
+        '  </url>\n'
+        '</urlset>\n'
+    )
+
+    # SEO: root favicon
+    fav = ROOT / "shared" / "assets" / "favicon.ico"
+    if fav.exists():
+        shutil.copy2(fav, DIST / "favicon.ico")
+
     total = sum(p.stat().st_size for p in DIST.rglob("*") if p.is_file())
-    print(f"dist/ = {total / 1024:.0f} KB")
+    print(f"dist/ = {total / 1024:.0f} KB (termasuk robots.txt, sitemap.xml, favicon.ico)")
 
 
 if __name__ == "__main__":
