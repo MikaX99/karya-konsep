@@ -29,39 +29,68 @@
   <meta name="twitter:description" content="{{ company.description }}">
   <meta name="twitter:image" content="https://mikax99.github.io/karya-konsep/shared/assets/kst-light.png">
 
-  <!-- Structured Data JSON-LD (Schema.org ITService / Organization) -->
+  <!-- Structured Data JSON-LD (Google Rich Results: LocalBusiness & BreadcrumbList) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "ITService",
-    "name": "{{ company.name }}",
-    "alternateName": "{{ company.brandName }}",
-    "url": "https://mikax99.github.io/karya-konsep/b-forest/",
-    "logo": "https://mikax99.github.io/karya-konsep/shared/assets/kst-light.png",
-    "image": "https://mikax99.github.io/karya-konsep/shared/assets/kst-light.png",
-    "description": "{{ company.description }}",
-    "telephone": "{{ company.phone }}",
-    "email": "{{ company.email }}",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Rawa Makmur, Kel. Cakung Timur, Kec. Cakung",
-      "addressLocality": "Jakarta Timur",
-      "addressRegion": "DKI Jakarta",
-      "postalCode": "13910",
-      "addressCountry": "ID"
-    },
-    "founder": {
-      "@type": "Organization",
-      "name": "{{ company.name }}"
-    },
-    "foundingDate": "{{ company.founded }}",
-    "areaServed": "Indonesia",
-    "serviceType": "System Integrator & IT Solution Provider",
-    "sameAs": [
-      "{{ social.linkedin }}",
-      "{{ social.instagram }}",
-      "{{ social.tiktok }}",
-      "{{ social.facebook }}"
+    "@graph": [
+      {
+        "@type": ["LocalBusiness", "ProfessionalService"],
+        "@id": "https://mikax99.github.io/karya-konsep/#organization",
+        "name": "{{ company.name }}",
+        "alternateName": "{{ company.brandName }}",
+        "url": "https://mikax99.github.io/karya-konsep/b-forest/",
+        "logo": "https://mikax99.github.io/karya-konsep/shared/assets/kst-light.png",
+        "image": "https://mikax99.github.io/karya-konsep/shared/assets/kst-light.png",
+        "description": "{{ company.description }}",
+        "telephone": "{{ company.phone }}",
+        "email": "{{ company.email }}",
+        "priceRange": "$$",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Rawa Makmur, Kel. Cakung Timur, Kec. Cakung",
+          "addressLocality": "Jakarta Timur",
+          "addressRegion": "DKI Jakarta",
+          "postalCode": "13910",
+          "addressCountry": "ID"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": -6.1578643,
+          "longitude": 106.9549488
+        },
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+            "opens": "08:00",
+            "closes": "17:00"
+          }
+        ],
+        "sameAs": [
+          "{{ social.linkedin }}",
+          "{{ social.instagram }}",
+          "{{ social.tiktok }}",
+          "{{ social.facebook }}"
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Hub Konsep",
+            "item": "https://mikax99.github.io/karya-konsep/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Konsep B · Forest",
+            "item": "https://mikax99.github.io/karya-konsep/b-forest/"
+          }
+        ]
+      }
     ]
   }
   </script>
